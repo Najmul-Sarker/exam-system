@@ -36,7 +36,7 @@
             </form>
         </div>
         <div class="card-footer text-center">
-            <a href="{{route('subjects.index')}}" class="btn btn-outline btn-sm">
+            <a href="{{route('subjects.index')}}" class="btn btn-sm bg-green">
                 <i class="material-icons">list</i> <span class="icon-name"></span>
                 </a>
         </div>

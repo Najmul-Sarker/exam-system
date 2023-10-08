@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\ExamSetupController;
 use App\Http\Controllers\QuestionBankController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,4 @@ Route::get('/', function () {
 Route::resource('subjects', SubjectController::class);
 Route::resource('chapters', ChapterController::class);
 Route::resource('questionbanks', QuestionBankController::class);
+Route::resource('examsetups', ExamSetupController::class);
