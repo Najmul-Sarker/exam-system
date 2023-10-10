@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AnswerScriptController;
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\ExamineeController;
 use App\Http\Controllers\ExamSetupController;
 use App\Http\Controllers\QuestionBankController;
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +29,14 @@ Route::resource('subjects', SubjectController::class);
 Route::resource('chapters', ChapterController::class);
 Route::resource('questionbanks', QuestionBankController::class);
 Route::resource('examsetups', ExamSetupController::class);
+
+Route::get('examinees/create',[ExamineeController::class,'create'])->name('examinees.create');
+Route::post('examinees/store',[ExamineeController::class,'store'])->name('examinees.store');
+// Route::get('examinees/questionpaper',[ExamineeController::class,'questionpaper'])->name('examinees.questionpapers');
+
+
+// Route::get('answerscripts/create',[ExamineeController::class,'create'])->name('examinees.create');
+Route::post('answerscripts/store',[AnswerScriptController::class,'store'])->name('answerscripts.store');
+// Route::get('examinees/questionpaper',[ExamineeController::class,'questionpaper'])->name('examinees.questionpapers');
+
+Route::get('results/show',[ResultController::class,'show'])->name('results.show');

@@ -20,7 +20,30 @@
             @method("PATCH")
             <div class="row clearfix">
                 <div class="col-sm-12">
-                    <div class="row"></div>
+                    <div class="form-group clearfix">  
+                        <label  for="">{{__("Select Subject Name")}}</label> 
+                        <select name="subject_id" id="subject_id" class="form-control show-tick">
+                            <option value="">-- Please select --</option>
+                        @foreach ($subjects as $subject)
+                        <option value="{{ $subject->id }}"
+                            {{ $questionbank->subject_id == $subject->id ? 'selected': '' }}>{{ $subject->title }}
+                        </option>
+                            
+                        @endforeach 
+                        </select>
+                    </div>
+                    <div class="form-group clearfix">  
+                        <label  for="">{{__("Select Chapter Name")}}</label> 
+                        <select name="chapter_id" id="chapter_id" class="form-control show-tick">
+                            <option value="">-- Please select --</option>
+                        @foreach ($chapters as $chapter)
+                        <option value="{{$chapter->id}}"
+                            {{ $questionbank->chapter_id == $chapter->id ? 'selected': '' }}>{{$chapter->title}}
+                        </option>
+                            
+                        @endforeach 
+                        </select>
+                    </div>
                     <div class="form-group">  
                         <label  for="">{{__("Title")}}</label>                                 
                         <input type="text" name="title" class="form-control" value="{{$examsetup->title}}" />

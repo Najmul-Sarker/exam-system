@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('exam_setups', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->nullable();
+            $table->foreignId('subject_id')->constrained()->onUpdate('cascade')->onDelete('cascade')->nullable();
+            $table->foreignId('chapter_id')->constrained()->onUpdate('cascade')->onDelete('cascade')->nullable();
 
             $table->string('title')->nullable();
             $table->integer('duration')->nullable();

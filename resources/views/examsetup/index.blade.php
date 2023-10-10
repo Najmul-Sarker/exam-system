@@ -16,7 +16,7 @@
 
         <div class="card">
             <div class="header">
-                <h2>{{__("Subject List Page")}}</h2>
+                <h2>{{__("ExamSetup List Page")}}</h2>
                 <ul class="header-dropdown">
                    
                     <li class="remove">
@@ -25,11 +25,13 @@
                 </ul>
             </div>
             <div class="body">
-                <div class="table">
+                <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead class="bg-grey">
                             <tr>
                                 <th>Sl</th>
+                                <th>Subject</th>
+                                <th>Chapter</th>
                                 <th>Title</th>
                                 <th>Duration</th>
                                 <th>Total Question</th>
@@ -45,6 +47,21 @@
                             @forelse ($examsetups as $examsetup)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
+                                <td>
+                                    @foreach ($subjects as $subject)
+                                    @if($subject->id ==$examsetup->subject_id)
+                                        {{$subject->title}}
+                                        @endif
+                                    @endforeach
+                                </td>
+                                {{-- <td>{{$questionbank->chapter->subject->title}}</td> --}}
+                                <td>
+                                    @foreach ($chapters as $chapter)
+                                    @if($chapter->id ==$examsetup->chapter_id)
+                                        {{$chapter->title}}
+                                        @endif
+                                    @endforeach
+                                </td>
                                 <td>{{$examsetup->title}}</td>
                                 <td> {{$examsetup->duration}} </td>
                                 <td> {{$examsetup->total_question}} </td>
@@ -66,7 +83,7 @@
                             </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="text-center">No Record Found</td>
+                                    <td colspan="10" class="text-center">No Record Found</td>
                                 </tr>
                             @endforelse
                             

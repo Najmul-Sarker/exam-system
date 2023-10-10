@@ -400,6 +400,11 @@
                         <li><a href="{{route('examsetups.index')}}">List</a></li>
                     </ul>
                 </li>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Examinee</span> <span class="badge badge-success float-right">1</span></a>
+                    <ul class="ml-menu">
+                        <li><a href="{{route('examinees.create')}}">List</a></li>
+                    </ul>
+                </li>
                 {{-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>UI Elements</span> <span class="badge badge-default float-right">15</span></a>
                     <ul class="ml-menu">
                         <li><a href="ui_kit.html">UI KIT</a></li>                    

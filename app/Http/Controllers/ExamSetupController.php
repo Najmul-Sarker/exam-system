@@ -2,37 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chapter;
 use App\Models\ExamSetup;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class ExamSetupController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $examsetups=ExamSetup::all();
-        return view('examsetup.index',compact('examsetups'));
+        $subjects=Subject::all();
+        $chapters=Chapter::all();
+        return view('examsetup.index',compact('examsetups','subjects','chapters'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('examsetup.create');
+        $subjects=Subject::all();
+        $chapters=Chapter::all();
+        return view('examsetup.create',compact('subjects','chapters'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         try {
             $request->validate([
+                'subject_id'=>'required',
+                'chapter_id'=>'required',
                 'title'=>'required',
                 'duration'=>'required',
                 'total_question' => 'required',
@@ -45,6 +44,8 @@ class ExamSetupController extends Controller
         
             ExamSetup::create([
                 'uuid'=> Str::uuid(),
+                'subject_id'=>$request->subject_id,
+                'chapter_id'=>$request->chapter_id,
                 'title'=>$request->title,
                 'duration'=>$request->duration,
                 'total_question'=>$request->total_question,
@@ -66,29 +67,24 @@ class ExamSetupController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(ExamSetup $examsetup)
     {
         return view('examsetup.show',compact('examsetup'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(ExamSetup $examsetup)
     {
-        return view('examsetup.edit',compact('examsetup'));
+        $subjects=Subject::all();
+        $chapters=Chapter::all();
+        return view('examsetup.edit',compact('examsetup','subjects','chapters'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, ExamSetup $examsetup)
     {
         try {
             $request->validate([
+                'subject_id'=>'required',
+                'chapter_id'=>'required',
                 'title'=>'required',
                 'duration'=>'required',
                 'total_question' => 'required',
@@ -101,6 +97,8 @@ class ExamSetupController extends Controller
         
             $examsetup->update([
                 'uuid'=> Str::uuid(),
+                'subject_id'=>$request->subject_id,
+                'chapter_id'=>$request->chapter_id,
                 'title'=>$request->title,
                 'duration'=>$request->duration,
                 'total_question'=>$request->total_question,
@@ -122,9 +120,6 @@ class ExamSetupController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(ExamSetup $examsetup)
     {
         $examsetup->delete();
