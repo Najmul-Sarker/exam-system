@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ExamSetup;
+use App\Models\Result;
 use Illuminate\Http\Request;
-use LDAP\Result;
 
 class ResultController extends Controller
 {
-    public function show(){
-        return view('result.show');
+    public function index(){
+        $results = Result::all();
+        $examsetups = ExamSetup::all();
+
+        return view('result.index',compact('results','examsetups'));
+
+
     }
+
+    
 }

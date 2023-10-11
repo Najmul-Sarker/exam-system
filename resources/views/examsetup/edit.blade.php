@@ -26,7 +26,7 @@
                             <option value="">-- Please select --</option>
                         @foreach ($subjects as $subject)
                         <option value="{{ $subject->id }}"
-                            {{ $questionbank->subject_id == $subject->id ? 'selected': '' }}>{{ $subject->title }}
+                            {{ $examsetup->subject_id == $subject->id ? 'selected': '' }}>{{ $subject->title }}
                         </option>
                             
                         @endforeach 
@@ -38,7 +38,7 @@
                             <option value="">-- Please select --</option>
                         @foreach ($chapters as $chapter)
                         <option value="{{$chapter->id}}"
-                            {{ $questionbank->chapter_id == $chapter->id ? 'selected': '' }}>{{$chapter->title}}
+                            {{ $examsetup->chapter_id == $chapter->id ? 'selected': '' }}>{{$chapter->title}}
                         </option>
                             
                         @endforeach 

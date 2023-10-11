@@ -2,12 +2,13 @@
     <div class="card">
         <div class="card-header">Question Paper</div>
            <div class="body">  
-            {{-- @dd($question)     --}}
+            {{-- @dd($total_ques)     --}}
           <form action="{{route('answerscripts.store')}}" method="POST">
             @csrf
             <input type="hidden" name="exam_id" value="{{$examinees->exam_setup_id}}">
             <input type="hidden" name="examinee_name" value="{{$examinees->name}}">
             <input type="hidden" name="roll_no" value="{{$examinees->roll_no}}">
+            <input type="hidden" name="total_ques" value="{{$total_ques}}">
             @forelse ($questions as $question)
             <div class="row">
                 <div class="col-lg-12">

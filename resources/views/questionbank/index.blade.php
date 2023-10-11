@@ -13,6 +13,8 @@
                 </ul>
             </div>
         @endif --}}
+
+        <a href="{{route('questionbank.excel')}}" class="btn btn-sm">excel</a>
         <div class="card">
             <div class="header">
                 <h2>{{__("Question List Page")}}</h2>

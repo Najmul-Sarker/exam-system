@@ -14,10 +14,9 @@
             </div>
         @endif --}}
 
-     
         <div class="card">
             <div class="header">
-                <h2>{{__("Chapter List Page")}}</h2>
+                <h2>{{__("Result List Page")}}</h2>
                 <ul class="header-dropdown">
                    
                     <li class="remove">
@@ -26,28 +25,39 @@
                 </ul>
             </div>
             <div class="body">
-                <div class="table">
+                <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead class="bg-grey">
                             <tr>
                                 <th>Sl</th>
-                                <th>Subject Name</th>
-                                <th>Title</th>
-                                <th>Description</th>
+                                <th>{{ __('Exam Name') }}</th>
+                                <th>{{ __('Examinee Name') }}</th>
+                                <th>{{ __('Roll No') }}</th>
+                                <th>{{ __('Get Marks') }}</th>
+                                <th>{{ __('Status') }}</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($chapters as $chapter)
+                            @forelse ($results as $result)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$chapter->subject->title}}</td>
-                                <td>{{$chapter->title}}</td>
-                                <td> {{$chapter->description}} </td>
                                 <td>
-                                    <a href="{{route('chapters.show',$chapter->id)}}">Show</a>
-                                    <a href="{{route('chapters.edit',$chapter->id)}}">Edit</a>
-                                    <form style="display:inline" action="{{route('chapters.destroy',$chapter->id)}}" method="POST">
+                                    @foreach ($examsetups as $examsetup)
+                                    @if($examsetup->id ==$result->exam_id)
+                                        {{$examsetup->title}}
+                                        @endif
+                                    @endforeach
+                                </td>
+                               
+                                <td>{{$result->examinee_name}}</td>
+                                <td>{{$result->examinee_roll_no}}</td>
+                                <td>{{$result->total_marks}}</td>
+                                <td>{{$result->status}}</td>
+                                <td>
+                                    <a href="{{route('examsetups.show',$examsetup->id)}}">Show</a>
+                                    <a href="{{route('examsetups.edit',$examsetup->id)}}">Edit</a>
+                                    <form style="display:inline" action="{{route('examsetups.destroy',$examsetup->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }">Delete</button>
@@ -57,7 +67,7 @@
                             </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5" class="text-center">No Record Found</td>
+                                    <td colspan="10" class="text-center">No Record Found</td>
                                 </tr>
                             @endforelse
                             
@@ -66,10 +76,11 @@
                 </div>
             </div>
             <div class="footer text-center">
-                <a href="{{route('chapters.create')}}" class="btn btn-sm bg-green">
+                <a href="{{route('examsetups.create')}}" class="btn btn-sm bg-green">
                     <i class="material-icons">add</i>
                     </a>
             </div>
         </div>
+        
 
 </x-backend.layouts.master>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AnswerScript;
+use App\Models\ExamSetup;
 use App\Models\QuestionBank;
 use App\Models\Result;
 use Illuminate\Http\Request;
@@ -16,21 +17,27 @@ class AnswerScriptController extends Controller
 
         try {
 
-            $answers = $request->except('_token','exam_id','examinee_name','roll_no','examinee_id');
-            $total_marks =0;
+            $answers = $request->except('_token','exam_id','examinee_name','roll_no','examinee_id','total_ques');
+            $wrong_answer=0;
+            $right_answer=0;
+            $marks = 0;
+            $total_marks=0;
             foreach ($answers as $id => $answer) {
                 $question = QuestionBank::find($id);
                 $correct = $question->correcct_answer;
-               
+                $total_marks +=$question->marks;
+                
                 if ($answer == $correct) {
                     $result = 'right';
-                    $total_marks++;
+                    $right_answer++;
+                    $marks += $question->marks;
+                    
                 }else {
                     $result = 'wrong';
+                    $wrong_answer++;
                 }
-                // dd($result);
                AnswerScript::create([
-                    'uuid'=> Str::uuid(),
+                   'uuid'=> Str::uuid(),
                     'subject_id'=>$question->subject_id,
                     'chapter_id'=>$question->chapter_id,
                     'examinee_name'=>$request->examinee_name,
@@ -49,10 +56,17 @@ class AnswerScriptController extends Controller
                     'type' => $question->type
                 ]);
             }
+            
 
-            // dd($total_marks);
+            $examsetups = ExamSetup::all();
 
-            if ($total_marks <3) {
+            $total_question=$request->total_ques;
+            $answered_question = $right_answer+$wrong_answer;
+            $negative_marks = $wrong_answer*.25;
+
+            $get_marks=$marks-$negative_marks;
+
+            if ($get_marks <3) {
                 $status = 'failed';
             }else{
                 $status = 'passed';
@@ -63,12 +77,13 @@ class AnswerScriptController extends Controller
                 'examinee_name'=>$request->examinee_name,
                 'examinee_roll_no'=>$request->roll_no,
                 'exam_id'=>$request->exam_id,
-                'total_marks'=> $total_marks,
+                'total_marks'=> $get_marks,
                 'status'=>$status,
             ]);
 
-        
-            return view ('result.show',compact('resultsheet'))->with('success', '"Answarscripts Submitted Successfully');
+            return view('result.show',compact('resultsheet','total_question','right_answer','answered_question','wrong_answer','negative_marks','get_marks','total_marks','examsetups'));
+
+            // return view ('',compact('resultsheet','total_question','right_answer','answered_question','wrong_answer','negative_marks'));
             
         } catch (\Illuminate\Database\QueryException $e) {
             Log::error("Database Error: " . $e->getMessage());

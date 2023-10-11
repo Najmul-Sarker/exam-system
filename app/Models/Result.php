@@ -9,5 +9,5 @@ class Result extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected  $guarded =[];
 }

@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\QuestionBankImport;
 use App\Models\Chapter;
 use App\Models\QuestionBank;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
 
 class QuestionBankController extends Controller
 {
@@ -151,6 +153,22 @@ class QuestionBankController extends Controller
     {
         $questionbank->delete();
 
+       
         return redirect(route("questionbanks.index"))->with('success', 'Question Deleted Successfully');
     }
+
+    public function excel(){
+        return view('questionbank.excl');
+    }
+
+    public function import(Request $request) 
+    {
+        // dd($request->all());
+        $excel =$request->excel;
+
+        Excel::import(new QuestionBankImport, $excel);
+        
+        return redirect()->back()->with('success', 'All good!');
+    }
+
 }

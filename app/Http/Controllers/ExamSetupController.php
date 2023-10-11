@@ -75,6 +75,7 @@ class ExamSetupController extends Controller
     public function edit(ExamSetup $examsetup)
     {
         $subjects=Subject::all();
+        // dd($subjects);
         $chapters=Chapter::all();
         return view('examsetup.edit',compact('examsetup','subjects','chapters'));
     }

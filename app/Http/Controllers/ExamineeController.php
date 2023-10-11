@@ -18,7 +18,7 @@ class ExamineeController extends Controller
 
     public function store(Request $request){
       
-        // dd($request->all());
+        
         $exam_id = $request->exam_setup_id;
         $exams = ExamSetup::where('id',$exam_id)->first();
         // dd($exams);
@@ -51,9 +51,8 @@ class ExamineeController extends Controller
                 'roll_no'=>$request->roll_no
             ]);
         
-            
 
-            return view('examinee.questionpaper',compact('examinees','questions'));
+            return view('examinee.questionpaper',compact('examinees','questions','total_ques'));
         } catch (\Illuminate\Database\QueryException $e) {
             Log::error("Database Error: " . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred while saving the data. Please try again later.');

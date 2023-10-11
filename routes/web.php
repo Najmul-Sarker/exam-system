@@ -28,6 +28,10 @@ Route::get('/', function () {
 Route::resource('subjects', SubjectController::class);
 Route::resource('chapters', ChapterController::class);
 Route::resource('questionbanks', QuestionBankController::class);
+
+Route::get('questionbank/excel', [QuestionBankController::class,'excel'])->name('questionbank.excel');
+Route::post('questionbank/import', [QuestionBankController::class,'import'])->name('questionbank.import');
+
 Route::resource('examsetups', ExamSetupController::class);
 
 Route::get('examinees/create',[ExamineeController::class,'create'])->name('examinees.create');
@@ -39,4 +43,5 @@ Route::post('examinees/store',[ExamineeController::class,'store'])->name('examin
 Route::post('answerscripts/store',[AnswerScriptController::class,'store'])->name('answerscripts.store');
 // Route::get('examinees/questionpaper',[ExamineeController::class,'questionpaper'])->name('examinees.questionpapers');
 
-Route::get('results/show',[ResultController::class,'show'])->name('results.show');
+Route::get('results/index',[ResultController::class,'index'])->name('index.show');
+Route::get('results/show',[ResultController::class,'show'])->name('result.show');
