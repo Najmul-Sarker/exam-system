@@ -33,6 +33,8 @@ Route::get('questionbank/excel', [QuestionBankController::class,'excel'])->name(
 Route::post('questionbank/import', [QuestionBankController::class,'import'])->name('questionbank.import');
 
 Route::resource('examsetups', ExamSetupController::class);
+Route::get('examsetups/examineelist/{id}',[ExamSetupController::class,'examineelist'])->name('examsetup.examineelist');
+Route::get('examsetups/individualresult/{roll_no}',[ExamSetupController::class,'individualresult'])->name('examsetup.individualresult');
 
 Route::get('examinees/create',[ExamineeController::class,'create'])->name('examinees.create');
 Route::post('examinees/store',[ExamineeController::class,'store'])->name('examinees.store');
@@ -45,3 +47,4 @@ Route::post('answerscripts/store',[AnswerScriptController::class,'store'])->name
 
 Route::get('results/index',[ResultController::class,'index'])->name('index.show');
 Route::get('results/show',[ResultController::class,'show'])->name('result.show');
+

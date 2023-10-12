@@ -71,6 +71,8 @@
                                 <td> {{$examsetup->start_at}} </td>
                                 <td> {{$examsetup->end_at}} </td>
                                 <td>
+
+                                    <a href="{{route('examsetup.examineelist',$examsetup->id)}}">Students</a>
                                     <a href="{{route('examsetups.show',$examsetup->id)}}">Show</a>
                                     <a href="{{route('examsetups.edit',$examsetup->id)}}">Edit</a>
                                     <form style="display:inline" action="{{route('examsetups.destroy',$examsetup->id)}}" method="POST">

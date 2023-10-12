@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AnswerScript;
 use App\Models\Chapter;
+use App\Models\Examinee;
 use App\Models\ExamSetup;
+use App\Models\Result;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -126,5 +129,26 @@ class ExamSetupController extends Controller
         $examsetup->delete();
 
         return redirect(route("examsetups.index"))->with('success', 'Examsetup Deleted Successfully');
+    }
+
+    public function examineelist($id){
+        $examineelists = Examinee::find($id,'exam_setup_id')->get();
+        $results=Result::all();
+        return view('examsetup.examineelist',compact('results','examineelists'));
+    }
+
+
+    public function individualresult($roll_no){
+
+        $answers = AnswerScript::where('roll_no',$roll_no)->get();
+        $answerscripts=[];
+        foreach ($answers as $value) {
+            $answerscripts[] = $value;
+        }
+
+
+
+        return view('examsetup.indiviualresult',compact('answerscripts'));
+
     }
 }

@@ -2,7 +2,7 @@
 <body class="theme-black">
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img src="{{asset('assets/zadid.jpg')}}" width="300" height="300" alt="Alpino"></div>
+            <div class="m-t-30"><img src="{{asset('assets/loading-thinking.gif')}}" width="300" height="300" alt="Alpino"></div>
             <p>Please wait...</p>        
         </div>
     </div>

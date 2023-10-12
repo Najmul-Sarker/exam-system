@@ -118,7 +118,11 @@
                                     <td></td>
                                     <th scope="row">{{ __('Status') }}</th>
                                     <td>:</td>
+                                    @if ($resultsheet->status=='passed')
                                     <td><span class="badge bg-teal">{{$resultsheet->status}} </span></td>
+                                    @elseif($resultsheet->status=='failed')
+                                    <td><span class="badge bg-red">{{$resultsheet->status}} </span></td>
+                                    @endif
                                 </tr>
                             </tbody>
                         </table>
