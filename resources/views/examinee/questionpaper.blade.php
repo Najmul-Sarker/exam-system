@@ -1,6 +1,16 @@
 <x-backend.layouts.master>
     <div class="card">
-        <div class="card-header">Question Paper</div>
+       
+        <div class="card-header">
+            <div class="col-lg-3 col-md-6">
+                <div class="card text-center">
+                   <div class="body">
+                    <span id="timer" class="align-right h1">00:00:00</span></div>
+                   </div>
+                </div>
+             </div>
+            
+            
            <div class="body">  
             {{-- @dd($total_ques)     --}}
           <form action="{{route('answerscripts.store')}}" method="POST">
@@ -53,5 +63,39 @@
             <i class="material-icons">list</i> <span class="icon-name"></span>
             </a>
     </div>
+    <script>
+        // Set the time limit in seconds (adjust this as needed)
+        const timeLimit = 30 * 60; // 30 minutes
+    
+        function startTimer(duration, display) {
+            let timer = duration, hours, minutes, seconds;
+    
+            const countdown = setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+    
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+    
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    // You can add a function to execute when the timer reaches zero here.
+                    alert("Time's up!");
+                }
+            }, 1000); // Update the timer every 1 second
+        }
+    
+        window.onload = function () {
+            const display = document.querySelector('#timer');
+            startTimer(timeLimit, display);
+        };
+    </script>
+    
+    
+    
 
 </x-backend.layouts.master>

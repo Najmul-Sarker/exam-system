@@ -30,9 +30,9 @@ class ExamineeController extends Controller
         $hard_ques = $exams->hard_question;
         $description_ques = $exams->question_description;
         // dd($easy);
-        $easy_q =  QuestionBank::where('question_level','easy')->where('subject_id',$subject)->where('chapter_id',$chapter)->take($easy_ques)->get();
-        $hard_q =  QuestionBank::where('question_level','hard')->where('subject_id',$subject)->where('chapter_id',$chapter)->take($hard_ques)->get();
-        $description_q =  QuestionBank::where('question_level','hard')->where('subject_id',$subject)->where('chapter_id',$chapter)->take($description_ques)->get();
+        $easy_q =  QuestionBank::where('question_level','easy')->where('subject_id',$subject)->where('chapter_id',$chapter)->inRandomOrder()->take($easy_ques)->get();
+        $hard_q =  QuestionBank::where('question_level','hard')->where('subject_id',$subject)->where('chapter_id',$chapter)->inRandomOrder()->take($hard_ques)->get();
+        $description_q =  QuestionBank::where('question_level','hard')->where('subject_id',$subject)->where('chapter_id',$chapter)->inRandomOrder()->take($description_ques)->get();
 
         $questions = $easy_q->concat($hard_q)->concat($description_q);
 
