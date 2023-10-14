@@ -14,6 +14,15 @@
 <link rel="stylesheet" href="{{asset('ui/backend/assets/css/main.css')}}">
 <link rel="stylesheet" href="{{asset('ui/backend/assets/css/color_skins.css')}}">
 <link rel="stylesheet" href="{{asset('ui/backend/assets/plugins/bootstrap-select/css/bootstrap-select.css')}}"  />
+<style>
+    .sticky-timer {
+        position: sticky;
+        top: 10px; /* Adjust the desired top position */
+        float: right; /* Align it to the right side */
+        z-index: 1000; /* Ensure the timer stays on top of other elements */
+    }
+</style>
+
 
 </head>
 

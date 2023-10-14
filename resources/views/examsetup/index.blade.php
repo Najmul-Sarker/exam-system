@@ -40,6 +40,7 @@
                                 <th>Question Description</th>
                                 <th>Start Time</th>
                                 <th>End Time</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -70,6 +71,11 @@
                                 <td> {{$examsetup->question_description}} </td>
                                 <td> {{$examsetup->start_at}} </td>
                                 <td> {{$examsetup->end_at}} </td>
+                                @if ($examsetup->status=='1')
+                                <td><span class="badge bg-green">ON</span></td>
+                                @elseif($examsetup->status=='0')
+                                <td><span class="badge bg-red">OFF</span></td>
+                                @endif
                                 <td>
 
                                     <a href="{{route('examsetup.examineelist',$examsetup->id)}}">Students</a>

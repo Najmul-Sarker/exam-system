@@ -20,6 +20,7 @@
         <script src="{{asset('ui/backend/assets/plugins/jquery-datatable/buttons/buttons.print.min.js')}}"></script>
 
         <script src="{{asset('ui/backend/assets/js/pages/tables/jquery-datatable.js')}}"></script>
+        
 
         
 

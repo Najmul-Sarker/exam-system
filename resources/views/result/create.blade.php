@@ -24,15 +24,19 @@
             @csrf
             <div class="row clearfix">
                 <div class="col-sm-12">
+                    @dd($examsetups->status)
 
                     <div class="form-group clearfix">  
                         <label  for="">{{__("Select Exam Name")}}</label> 
                         <select name="exam_setup_id" id="exam_setup_id" class="form-control show-tick">
                             <option value="">-- Please select --</option>
-                        @foreach ($examsetups as $examsetup)
-                        <option value="{{$examsetup->id}}">{{$examsetup->title}}</option>
-                            
-                        @endforeach 
+                            @foreach ($examsetups as $examsetup)
+                                @if ($examsetup->status == '0')
+                                    <option value="{{$examsetup->id}}">{{$examsetup->title}}</option>
+                                @else
+                                    <option value="" disabled>Exam Not Started</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
 

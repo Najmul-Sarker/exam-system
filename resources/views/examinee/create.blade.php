@@ -28,21 +28,24 @@
                     <div class="form-group clearfix">  
                         <label  for="">{{__("Select Exam Name")}}</label> 
                         <select name="exam_setup_id" id="exam_setup_id" class="form-control show-tick">
-                            <option value="">-- Please select --</option>
-                        @foreach ($examsetups as $examsetup)
-                        <option value="{{$examsetup->id}}">{{$examsetup->title}}</option>
-                            
-                        @endforeach 
+                            <option value="" disabled>-- Please select --</option>
+                            @foreach ($examsetups as $examsetup)
+                                @if ($examsetup->status == '1')
+                                    <option value="{{$examsetup->id}}">{{$examsetup->title}}</option>
+                                @else
+                                    <option value="" disabled>Exam Not Started</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
 
                     <div class="form-group">  
                         <label  for="">{{__("Name")}}</label>                                 
-                        <input type="text" name="name" class="form-control" placeholder="Title" />
+                        <input type="text" name="name" class="form-control" placeholder="Write Your Name" />
                     </div>
                     <div class="form-group"> 
                         <label  for="">{{__("Roll No")}}</label>                                   
-                        <input type="number" name="roll_no" class="form-control" placeholder="Description" />
+                        <input type="number" name="roll_no" class="form-control" placeholder="Roll No" />
                     </div>
                 </div>
             </div>

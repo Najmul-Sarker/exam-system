@@ -22,6 +22,7 @@ class ExamineeController extends Controller
         $exam_id = $request->exam_setup_id;
         $exams = ExamSetup::where('id',$exam_id)->first();
         // dd($exams);
+        $exam_name = $exams->title;
         $total_ques = $exams->total_question;
         $subject = $exams->subject_id;
         $chapter = $exams->chapter_id;
@@ -52,7 +53,7 @@ class ExamineeController extends Controller
             ]);
         
 
-            return view('examinee.questionpaper',compact('examinees','questions','total_ques'));
+            return view('examinee.questionpaper',compact('examinees','questions','total_ques','exam_name'));
         } catch (\Illuminate\Database\QueryException $e) {
             Log::error("Database Error: " . $e->getMessage());
             return redirect()->back()->with('error', 'An error occurred while saving the data. Please try again later.');
