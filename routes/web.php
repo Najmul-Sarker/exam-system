@@ -7,6 +7,7 @@ use App\Http\Controllers\ExamSetupController;
 use App\Http\Controllers\QuestionBankController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SubjectController;
+use App\Models\ExamSetup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,7 @@ Route::post('questionbank/import', [QuestionBankController::class,'import'])->na
 Route::resource('examsetups', ExamSetupController::class);
 Route::get('examsetups/examineelist/{id}',[ExamSetupController::class,'examineelist'])->name('examsetup.examineelist');
 Route::get('examsetups/individualresult/{roll_no}',[ExamSetupController::class,'individualresult'])->name('examsetup.individualresult');
+Route::put('examsetups/status/update/{examsetup}', [ExamSetupController::class,'updatestatus'])->name('examsetup.update.status');
 
 Route::get('examinees/create',[ExamineeController::class,'create'])->name('examinees.create');
 Route::post('examinees/store',[ExamineeController::class,'store'])->name('examinees.store');

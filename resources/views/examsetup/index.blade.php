@@ -55,7 +55,6 @@
                                         @endif
                                     @endforeach
                                 </td>
-                                {{-- <td>{{$questionbank->chapter->subject->title}}</td> --}}
                                 <td>
                                     @foreach ($chapters as $chapter)
                                     @if($chapter->id ==$examsetup->chapter_id)
@@ -71,11 +70,18 @@
                                 <td> {{$examsetup->question_description}} </td>
                                 <td> {{$examsetup->start_at}} </td>
                                 <td> {{$examsetup->end_at}} </td>
-                                @if ($examsetup->status=='1')
-                                <td><span class="badge bg-green">ON</span></td>
-                                @elseif($examsetup->status=='0')
-                                <td><span class="badge bg-red">OFF</span></td>
-                                @endif
+                                <td>
+
+                                    <form action="{{ route('examsetup.update.status', $examsetup->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <input type="hidden" name="status" value="{{ $examsetup->status }}">
+                                        <button type="submit" class="btn btn-sm {{ $examsetup->status == 1 ? 'btn-success' : 'btn-danger' }}">
+                                            {{ $examsetup->status == 1 ? 'Active' : 'Inactive' }}
+                                        </button>
+                                    </form>
+            
+                                 </td>
                                 <td>
 
                                     <a href="{{route('examsetup.examineelist',$examsetup->id)}}">Students</a>
@@ -105,6 +111,7 @@
                     </a>
             </div>
         </div>
+ 
         
 
 </x-backend.layouts.master>

@@ -11,6 +11,7 @@ use App\Models\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class ExamSetupController extends Controller
 {
@@ -151,4 +152,16 @@ class ExamSetupController extends Controller
         return view('examsetup.indiviualresult',compact('answerscripts'));
 
     }
+
+    public function updatestatus(Request $request, ExamSetup $examsetup)
+
+    {
+
+        $examsetup->status = $request->status == 1 ? 0 : 1;
+        $examsetup->save();
+
+    return redirect()->back();
+
+    }
+
 }
