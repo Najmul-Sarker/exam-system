@@ -31,14 +31,18 @@
                 </div>
             </div>
             <div class="row justify-content-end">
-                <button type="submit" class="btn btn-lg"><i class="material-icons">check</i> <span class="icon-name"></span>Submit</button>
+                <button type="submit" class="btn btn-md btn-info d-flex align-items-center">
+                    <i class="material-icons">check</i>
+                    <b>Submit</b>
+                </button>
             </div>
             </form>
         </div>
-        <div class="card-footer text-center">
-            <a href="#" class="btn btn-sm bg-green">
-                <i class="material-icons">list</i> <span class="icon-name"></span>
-                </a>
+        <div class="card-footer text-center d-flex justify-content-center">
+            <a href="{{ route('questionbanks.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                <i class="material-icons">list</i>
+            </a>
+            
         </div>
     </div>
 </x-backend.layouts.master>

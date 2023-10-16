@@ -19,7 +19,7 @@
             </div>
         @endif --}}
 
-        <div class="card-body">
+        <div class="body">
             <form action="{{route('examinees.store')}}" method="POST">
             @csrf
             <div class="row clearfix">
@@ -50,14 +50,15 @@
                 </div>
             </div>
             <div class="row justify-content-end">
-                <button type="submit" class="btn btn-lg"><i class="material-icons">check</i> <span class="icon-name"></span>Submit</button>
+                <button type="submit" class="btn btn-md btn-info d-flex align-items-center">
+                    <i class="material-icons">arrow_forward</i>
+                    <b>Start Exam</b>
+                </button>
             </div>
             </form>
         </div>
         <div class="card-footer text-center">
-            <a href="#" class="btn btn-sm bg-green">
-                <i class="material-icons">list</i> <span class="icon-name"></span>
-                </a>
+            
         </div>
     </div>
 </x-backend.layouts.master>

@@ -43,7 +43,7 @@
 
                     <div class="form-group">  
                         <label  for="">{{__("Question Text")}}</label>                                 
-                        <input type="text" name="question_text" class="form-control" placeholder="Title" />
+                        <input type="text" name="question_text" class="form-control" placeholder="Question Text" />
                         @error('question_text')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror 
@@ -51,47 +51,65 @@
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Option 1")}}</label>                                 
-                        <input type="text" name="option1" class="form-control" placeholder="Title" />
+                        <input type="text" name="option1" class="form-control" placeholder="Option 1" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Option 2")}}</label>                                 
-                        <input type="text" name="option2" class="form-control" placeholder="Title" />
+                        <input type="text" name="option2" class="form-control" placeholder="Option 2" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Option 3")}}</label>                                 
-                        <input type="text" name="option3" class="form-control" placeholder="Title" />
+                        <input type="text" name="option3" class="form-control" placeholder="Option 3" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Option 4")}}</label>                                 
-                        <input type="text" name="option4" class="form-control" placeholder="Title" />
+                        <input type="text" name="option4" class="form-control" placeholder="Option 4" />
                     </div>
                     <div class="form-group"> 
-                        <label  for="">{{__("Correct Answer")}}</label>                                   
-                        <input type="text" name="correcct_answer" class="form-control" placeholder="Description" />
+                        <label  for="">{{__("Correct Answer")}}</label>
+                        <select name="correcct_answer" id="correcct_answer" class="form-control show-tick">
+                            <option value="">-- Please select --</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                        <option value="4">Option 4</option>
+                        </select>
                     </div>
                     <div class="form-group"> 
-                        <label  for="">{{__("Question Level")}}</label>                                   
-                        <input type="text" name="question_level" class="form-control" placeholder="Description" />
+                        <label  for="">{{__("Question Level")}}</label> 
+                        <select name="question_level" id="question_level" class="form-control show-tick">
+                            <option value="">-- Please select --</option>
+                        <option value="easy">Easy</option>
+                        <option value="hard">Hard</option>
+                        </select>
                     </div>
                     <div class="form-group"> 
                         <label  for="">{{__("Marks")}}</label>                                   
-                        <input type="text" name="marks" class="form-control" placeholder="Description" />
+                        <input type="text" name="marks" class="form-control" placeholder="Marks" />
                     </div>
                     <div class="form-group"> 
-                        <label  for="">{{__("Question Type")}}</label>                                   
-                        <input type="text" name="type" class="form-control" placeholder="Description" />
+                        <label  for="">{{__("Question Type")}}</label>  
+                        <select name="type" id="type" class="form-control show-tick">
+                            <option value="">-- Please select --</option>
+                        <option value="mcq">MCQ</option>
+                        <option value="description">DESCRIPTION</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-end">
-                <button type="submit" class="btn btn-lg"><i class="material-icons">check</i> <span class="icon-name"></span>Submit</button>
+                <button type="submit" class="btn btn-md btn-info d-flex align-items-center">
+                    <i class="material-icons">check</i>
+                    <b>Submit</b>
+                </button>
             </div>
             </form>
         </div>
-        <div class="card-footer text-center">
-            <a href="{{route('questionbanks.index')}}" class="btn btn-sm bg-green">
-                <i class="material-icons">list</i> <span class="icon-name"></span>
-                </a>
+        <div class="card-footer text-center d-flex justify-content-center">
+            <a href="{{ route('questionbanks.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                <i class="material-icons">list</i>
+            </a>
+            
         </div>
     </div>
 </x-backend.layouts.master>

@@ -1,19 +1,20 @@
 <x-backend.layouts.master>
     <div class="card">
         <div class="card-header">Chapter Details</div>
-           <div class="card-body">
+           <div class="body">
             
             
             <p><b>{{ __('Subject Name') }} : </b> {{ $chapter->subject->title }}</p>
-            <p><b>{{ __('Title') }} : </b> {{ $chapter->title }}</p>
+            <p><b>{{ __('Chapter Name') }} : </b> {{ $chapter->title }}</p>
             <p><b>{{ __('Description') }} : </b> {{ $chapter->description }}</p>
               
                
            </div>
-           <div class="card-footer text-center">
-            <a href="{{route('chapters.index')}}" class="btn btn-sm bg-green">
-                <i class="material-icons">list</i> <span class="icon-name"></span>
-                </a>
+           <div class="card-footer text-center d-flex justify-content-center">
+            <a href="{{ route('chapters.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                <i class="material-icons">list</i>
+            </a>
+            
         </div>
        </div>
 

@@ -42,14 +42,22 @@
                                 <td>{{$subject->title}}</td>
                                 <td> {{$subject->description}} </td>
                                 <td>
-                                    <a href="{{route('subjects.show',$subject->id)}}">Show</a>
-                                    <a href="{{route('subjects.edit',$subject->id)}}">Edit</a>
+                                    <div style="display: flex; flex-direction: row;">
+                                    <a href="{{route('subjects.show',$subject->id)}}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;">
+                                        <i class="zmdi zmdi-eye mx-auto"></i>
+                                    </a>
+                                    <a href="{{route('subjects.edit',$subject->id)}}"class="btn btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
+                                        <i class="zmdi zmdi-edit mx-auto"></i>
+                                    </a>
                                     <form style="display:inline" action="{{route('subjects.destroy',$subject->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }">Delete</button>
+                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }" class="btn btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
+                                            <i class="zmdi zmdi-delete mx-auto"></i>
+                                        </button>
                                         
                                     </form>
+                                    </div>
                                 </td>
                             </tr>
                             @empty
@@ -62,11 +70,13 @@
                     </table>
                 </div>
             </div>
-            <div class="footer text-center">
-                <a href="{{route('subjects.create')}}" class="btn btn-sm bg-green">
+            <div class="card-footer text-center d-flex justify-content-center">
+                <a href="{{ route('subjects.create') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
                     <i class="material-icons">add</i>
-                    </a>
+                </a>
+                
             </div>
+            
         </div>
         
 

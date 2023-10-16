@@ -2,7 +2,7 @@
     <ul class="menu_list">
         <li>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="{{asset('ui/backend/assets/images/profile/profile_av.jpg')}}" alt="Alpino"></a>
+            <a class="navbar-brand" href="index.html"><img src="{{asset('assets/najmul.jpg')}}" alt="Alpino"></a>
         </li>
         <li><a href="javascript:void(0);" class="btn_overlay hidden-sm-down"><i class="zmdi zmdi-search"></i></a></li>        
         <li><a href="javascript:void(0);" class="menu-sm"><i class="zmdi zmdi-swap"></i></a></li>        
@@ -366,7 +366,7 @@
                 <li>
                     <div class="user-info m-b-20">
                         <div class="image">
-                            <a href="profile.html"><img src="{{asset('ui/backend/assets/images/profile/profile_av.jpg')}}" alt="User"></a>
+                            <a href="profile.html"><img src="{{asset('assets/najmul.jpg')}}" alt="User"></a>
                         </div>
                         <div class="detail">
                             <h6>Michael</h6>
@@ -400,30 +400,10 @@
                         <li><a href="{{route('examsetups.index')}}">List</a></li>
                     </ul>
                 </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Examinee</span> <span class="badge badge-success float-right">1</span></a>
-                    <ul class="ml-menu">
-                        <li><a href="{{route('examinees.create')}}">List</a></li>
-                    </ul>
+                <li><a href="{{route('examinees.create')}}" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Examinee</span> <span class="badge badge-success float-right">1</span></a>
+                    
                 </li>
-                {{-- <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>UI Elements</span> <span class="badge badge-default float-right">15</span></a>
-                    <ul class="ml-menu">
-                        <li><a href="ui_kit.html">UI KIT</a></li>                    
-                        <li><a href="alerts.html">Alerts</a></li>                    
-                        <li><a href="collapse.html">Collapse</a></li>
-                        <li><a href="colors.html">Colors</a></li>
-                        <li><a href="dialogs.html">Dialogs</a></li>
-                        <li><a href="icons.html">Icons</a></li>                    
-                        <li><a href="list-group.html">List Group</a></li>
-                        <li><a href="media-object.html">Media Object</a></li>
-                        <li><a href="modals.html">Modals</a></li>
-                        <li><a href="notifications.html">Notifications</a></li>                    
-                        <li><a href="progressbars.html">Progress Bars</a></li>
-                        <li><a href="range-sliders.html">Range Sliders</a></li>
-                        <li><a href="sortable-nestable.html">Sortable & Nestable</a></li>
-                        <li><a href="tabs.html">Tabs</a></li>
-                        <li><a href="waves.html">Waves</a></li>
-                    </ul>
-                </li> --}}
+                
 
                                
             </ul>

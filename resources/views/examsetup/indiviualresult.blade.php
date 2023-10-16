@@ -27,7 +27,6 @@
                                 <th>Correct Answer</th>
                                 <th>Submitted Answer</th>
                                 <th>Status</th>
-                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,16 +47,6 @@
                                     @elseif($answerscript->status=='wrong')
                                     <td><span class="badge bg-red">{{$answerscript->status}} </span></td>
                                     @endif
-                                <td>
-                                    <a href="">Show</a>
-                                    <a href="">Edit</a>
-                                    <form style="display:inline" action="" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }">Delete</button>
-                                        
-                                    </form>
-                                </td>
                             </tr>
                             @empty
                                 <tr>
@@ -69,10 +58,11 @@
                     </table>
                 </div>
             </div>
-            <div class="footer text-center">
-                <a href="{{route('examsetups.create')}}" class="btn btn-sm bg-green">
-                    <i class="material-icons">add</i>
-                    </a>
+            <div class="card-footer text-center d-flex justify-content-center">
+                <a href="{{ route('examsetups.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                    <i class="material-icons">list</i>
+                </a>
+                
             </div>
         </div>
         

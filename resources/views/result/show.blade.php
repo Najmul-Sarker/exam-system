@@ -1,38 +1,4 @@
 <x-backend.layouts.master>
-    {{-- <div class="card">
-        <div class="card-header">Result Details</div>
-           <div class="card-body text-center">
-
-            
-            <p><b>{{ __('Examinee Name') }} : {{$resultsheet->examinee_name}} </b></p>
-                        
-            <p><b>{{ __('Roll No') }} :{{$resultsheet->examinee_roll_no}} </b> </p>
-
-            @foreach ($examsetups as $examsetup)
-            @if($examsetup->id==$resultsheet->exam_id)
-                <p><b>{{ __('Exam Name') }} : {{$examsetup->title}}</b> </p>
-            
-            @endif
-                
-            @endforeach
-            
-            <p><b>{{ __('Total Mark') }} :{{$total_marks}} </b> </p>
-            <p><b>{{ __('Total Question') }} :{{$total_question}} </b> </p>
-            <p><b>{{ __('Answered Question') }} :{{$answered_question}} </b> </p>
-            <p><b>{{ __('Right Answer') }} : </b>{{$right_answer}} </p>
-            <p><b>{{ __('Wrong Answer') }} : </b> {{$wrong_answer}}</p>
-            <p><b>{{ __('Negative Marks') }} : {{$negative_marks}} </b> </p>
-            <p><b>{{ __('Get Marks') }} :{{$resultsheet->total_marks}} </b> </p>
-            <p><b>{{ __('Status') }} :<span class="badge bg-teal">{{$resultsheet->status}} </span></b> </p>
-              
-               
-           </div>
-           <div class="card-footer text-center">
-            <a href="#" class="btn btn-sm bg-green">
-                <i class="material-icons">list</i> <span class="icon-name"></span>
-                </a>
-        </div>
-    </div> --}}
 
     <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">

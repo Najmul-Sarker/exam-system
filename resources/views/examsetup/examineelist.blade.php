@@ -57,15 +57,11 @@
                                     <td>N/A</td>
                                     <td>N/A</td>
                                 @endif
-                    
+                                
                                 <td>
-                                    <a href="{{ route('examsetup.individualresult', $examineelist->roll_no) }}">Show</a>
-                                    <a href="#">Edit</a>
-                                    <form style="display:inline" action="" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }">Delete</button>
-                                    </form>
+                                    <div style="display: flex; flex-direction: row;">
+                                    <a href="{{ route('examsetup.individualresult', $examineelist->roll_no) }}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Individual Result Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
+                                    </div>
                                 </td>
                             </tr>
                         @empty
@@ -78,10 +74,11 @@
                 </table>
             </div>
         </div>
-        <div class="footer text-center">
-            <a href="{{route('examsetups.index')}}" class="btn btn-sm bg-green">
-                <i class="material-icons">add</i>
-                </a>
+        <div class="card-footer text-center d-flex justify-content-center">
+            <a href="{{ route('examsetups.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                <i class="material-icons">list</i>
+            </a>
+            
         </div>
     </div>
     

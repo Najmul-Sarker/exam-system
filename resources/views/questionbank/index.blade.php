@@ -14,7 +14,7 @@
             </div>
         @endif --}}
 
-        <a href="{{route('questionbank.excel')}}" class="btn btn-sm">excel</a>
+        <a href="{{route('questionbank.excel')}}" class="btn btn-success" title="Excel Import">Excel</a>
         <div class="card">
             <div class="header">
                 <h2>{{__("Question List Page")}}</h2>
@@ -69,14 +69,22 @@
                                 <td> {{$questionbank->marks}} </td>
                                 <td> {{$questionbank->type}} </td>
                                 <td>
-                                    <a href="{{route('questionbanks.show',$questionbank->id)}}">Show</a>
-                                    <a href="{{route('questionbanks.edit',$questionbank->id)}}">Edit</a>
+                                    <div style="display: flex; flex-direction: row;">
+                                    <a href="{{route('questionbanks.show',$questionbank->id)}}" class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
+
+                                    <a href="{{route('questionbanks.edit',$questionbank->id)}}"class="btn btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
+                                        <i class="zmdi zmdi-edit mx-auto"></i>
+                                    </a>
+
                                     <form style="display:inline" action="{{route('questionbanks.destroy',$questionbank->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }">Delete</button>
+                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }"class="btn btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
+                                            <i class="zmdi zmdi-delete mx-auto"></i>
+                                        </button>
                                         
                                     </form>
+                                </div>
         
                                 </td>
                             </tr>
@@ -90,10 +98,11 @@
                     </table>
                 </div>
             </div>
-            <div class="footer text-center">
-                <a href="{{route('questionbanks.create')}}" class="btn btn-sm bg-green">
+            <div class="card-footer text-center d-flex justify-content-center">
+                <a href="{{ route('questionbanks.create') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
                     <i class="material-icons">add</i>
-                    </a>
+                </a>
+                
             </div>
         </div>
 

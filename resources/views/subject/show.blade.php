@@ -9,10 +9,11 @@
               
                
            </div>
-           <div class="card-footer text-center">
-            <a href="{{route('subjects.index')}}" class="btn btn-sm bg-green">
-                <i class="material-icons">list</i> <span class="icon-name"></span>
-                </a>
+           <div class="card-footer text-center d-flex justify-content-center">
+            <a href="{{ route('subjects.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                <i class="material-icons">list</i>
+            </a>
+            
         </div>
        </div>
 
