@@ -41,11 +41,11 @@
 
                     <div class="form-group">  
                         <label  for="">{{__("Name")}}</label>                                 
-                        <input type="text" name="name" class="form-control" placeholder="Write Your Name" />
+                        <input type="text" name="name" class="form-control" value="{{Auth()->user()->name}}" placeholder="Write Your Name" />
                     </div>
                     <div class="form-group"> 
                         <label  for="">{{__("Roll No")}}</label>                                   
-                        <input type="number" name="roll_no" class="form-control" placeholder="Roll No" />
+                        <input type="number" name="roll_no" class="form-control" value="{{Auth()->user()->id}}" placeholder="Roll No" />
                     </div>
                 </div>
             </div>

@@ -6,11 +6,11 @@
                
                <div class="card text-center">
                   <div class="body">
-                        <p class="m-b-20"><i class="zmdi zmdi-balance zmdi-hc-3x col-amber"></i></p>
+                        <p class="m-b-20"><i class="zmdi zmdi-assignment zmdi-hc-3x col-amber"></i></p>
                         @php
                         $questionCount = \App\Models\QuestionBank::count();
                     @endphp
-                        <span>Total Questions</span>
+                        <span>Question Bank Total Questions</span>
                         <h3 class="m-b-10"><span class="number count-to" data-from="0" data-to={{$questionCount}} data-speed="2000" data-fresh-interval="700"> {{$questionCount}} </span></h3>
                         
                   </div>
@@ -20,9 +20,12 @@
                <div class="card text-center">
                   <div class="body">
                         <p class="m-b-20"><i class="zmdi zmdi-assignment zmdi-hc-3x col-blue"></i></p>
-                        <span>Total Orders</span>
-                        <h3 class="m-b-10 number count-to" data-from="0" data-to="865" data-speed="2000" data-fresh-interval="700">865</h3>
-                        <small class="text-muted">88% lower growth</small>
+                        @php
+                        $totalExam = \App\Models\ExamSetup::count();
+                        @endphp
+                        <span>Total Exam Set</span>
+                        <h3 class="m-b-10 number count-to" data-from="0" data-to= {{$totalExam}} data-speed="2000" data-fresh-interval="700"> {{$totalExam}} </h3>
+                        
                   </div>
                </div>
             </div>
@@ -30,9 +33,12 @@
                <div class="card text-center">
                   <div class="body">
                         <p class="m-b-20"><i class="zmdi zmdi-shopping-basket zmdi-hc-3x"></i></p>
-                        <span>Total Sales</span>
-                        <h3 class="m-b-10 number count-to" data-from="0" data-to="3502" data-speed="2000" data-fresh-interval="700">3502</h3>
-                        <small class="text-muted">38% lower growth</small>
+                        @php
+                        $totalAttender = \App\Models\Examinee::where('exam_setup_id', 1)->count();
+                        @endphp
+                        <span>Total Attender</span>
+                        <h3 class="m-b-10 number count-to" data-from="0" data-to={{$totalAttender}} data-speed="2000" data-fresh-interval="700">{{$totalAttender}}</h3>
+                        
                   </div>
                </div>
             </div>
@@ -40,9 +46,12 @@
                <div class="card text-center">
                   <div class="body">
                         <p class="m-b-20"><i class="zmdi zmdi-account-box zmdi-hc-3x col-green"></i></p>
-                        <span>New Employees</span>
-                        <h3 class="m-b-10 number count-to" data-from="0" data-to="78" data-speed="2000" data-fresh-interval="700">78</h3>
-                        <small class="text-muted">78% lower growth</small>
+                        @php
+                        $totalUser = \App\Models\User::count();
+                     @endphp
+                        <span>Total Users</span>
+                        <h3 class="m-b-10 number count-to" data-from="0" data-to= {{$totalUser}} data-speed="2000" data-fresh-interval="700">{{$totalUser}}</h3>
+                        
                   </div>
                </div>
             </div>

@@ -1,5 +1,5 @@
 <x-backend.layouts.partials.head/>
-<body class="theme-black">
+<body style="background-image: url('{{ asset('assets/bg-3.webp') }}');">
 <div class="authentication">
     <div class="container">
         <div class="col-md-12 content-center">
