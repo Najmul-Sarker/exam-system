@@ -1,4 +1,9 @@
 <x-backend.layouts.master>
+
+    <x-slot:title>
+                Subject List
+    </x-slot>
+
     @if (session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -29,30 +34,30 @@
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                         <thead class="bg-grey">
                             <tr>
-                                <th>Sl</th>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Action</th>
+                                <th class="text-center">Sl</th>
+                                <th class="text-center">Title</th>
+                                <th class="text-center">Description</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($subjects as $subject)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
+                                <td class="text-center">{{$loop->iteration}}</td>
                                 <td>{{$subject->title}}</td>
                                 <td> {{$subject->description}} </td>
-                                <td>
-                                    <div style="display: flex; flex-direction: row;">
-                                    <a href="{{route('subjects.show',$subject->id)}}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;">
+                                <td class="text-center">
+                                    <div class="d-flex justify-content-center">
+                                    <a href="{{route('subjects.show',$subject->id)}}"class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-eye mx-auto"></i>
                                     </a>
-                                    <a href="{{route('subjects.edit',$subject->id)}}"class="btn btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
+                                    <a href="{{route('subjects.edit',$subject->id)}}"class="btn btn-sm btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-edit mx-auto"></i>
                                     </a>
                                     <form style="display:inline" action="{{route('subjects.destroy',$subject->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }" class="btn btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
+                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }" class="btn btn-sm btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
                                             <i class="zmdi zmdi-delete mx-auto"></i>
                                         </button>
                                         
@@ -71,7 +76,7 @@
                 </div>
             </div>
             <div class="card-footer text-center d-flex justify-content-center">
-                <a href="{{ route('subjects.create') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
+                <a href="{{ route('subjects.create') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
                     <i class="material-icons">add</i>
                 </a>
                 

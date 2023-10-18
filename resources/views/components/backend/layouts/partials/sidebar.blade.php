@@ -30,9 +30,17 @@
         <li><a href="contact.html" title="Contact List"><i class="zmdi zmdi-account-box-phone"></i></a></li>        
         <li><a href="chat.html"><i class="zmdi zmdi-comments"></i></a></li>        
         <li><a href="javascript:void(0);" class="fullscreen" data-provide="fullscreen"><i class="zmdi zmdi-fullscreen"></i></a></li>
-        <li class="power">
+        <li class="power m-1">
             <a href="javascript:void(0);" class="js-right-sidebar"><i class="zmdi zmdi-settings zmdi-hc-spin"></i></a>            
-            <a href="sign-in.html" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
+            {{-- <a href="sign-in.html" class="mega-menu"><i class="zmdi zmdi-power"></i></a> --}}
+
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+    
+                <button type="submit" class="mega-menu btn-dark border-0" title="Log Out" >
+                    <i class="zmdi zmdi-power"></i></a>
+                </button>
+            </form>
         </li>
     </ul>    
 </aside>
@@ -369,8 +377,8 @@
                             <a href="profile.html"><img src="{{asset('assets/najmul.jpg')}}" alt="User"></a>
                         </div>
                         <div class="detail">
-                            <h6>Michael</h6>
-                            <p class="m-b-0">info@example.com</p>
+                            <h6>{{Auth()->user()->name}}</h6>
+                            <p class="m-b-0"> {{Auth()->user()->email}} </p>
                             <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-facebook-box"></i></a>
                             <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-linkedin-box"></i></a>
                             <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-instagram"></i></a>
@@ -378,7 +386,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="header">MAIN</li>
+                {{-- <li class="header">MAIN</li> --}}
                 <li class="active open"> <a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="material-icons">subject</i> <span class="icon-name">Subject</span> <span class="badge badge-success float-right">1</span></a>
                     <ul class="ml-menu">

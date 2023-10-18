@@ -89,18 +89,18 @@
                                 <td>
 
                                     <div style="display: flex; flex-direction: row;">
-                                        <a href="{{ route('examsetup.examineelist', $examsetup->id) }}" class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Student List" style="margin-right: 10px;">
+                                        <a href="{{ route('examsetup.examineelist', $examsetup->id) }}" class="btn btn-icon btn-sm btn-success btn-icon-mini d-flex align-items-center" title="Student List" style="margin-right: 10px;">
                                             <i class="zmdi zmdi-eye mx-auto"></i>
                                         </a>
                                     
-                                        <a href="{{ route('examsetups.edit', $examsetup->id) }}" class="btn btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit Exam" style="margin-right: 10px;">
+                                        <a href="{{ route('examsetups.edit', $examsetup->id) }}" class="btn btn-icon btn-sm btn-info btn-icon-mini d-flex align-items-center" title="Edit Exam" style="margin-right: 10px;">
                                             <i class="zmdi zmdi-edit mx-auto"></i>
                                         </a>
                                     
                                         <form style="display:inline" action="{{ route('examsetups.destroy', $examsetup->id) }}" method="POST">
                                             @csrf
                                             @method('delete')
-                                            <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }" class="btn btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete Exam">
+                                            <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }" class="btn btn-icon btn-sm btn-danger btn-icon-mini d-flex align-items-center" title="Delete Exam">
                                                 <i class="zmdi zmdi-delete mx-auto"></i>
                                             </button>
                                         </form>

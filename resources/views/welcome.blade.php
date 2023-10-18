@@ -3,12 +3,16 @@
       <div class="block-header">
          <div class="row clearfix">
             <div class="col-lg-3 col-md-6">
+               
                <div class="card text-center">
                   <div class="body">
                         <p class="m-b-20"><i class="zmdi zmdi-balance zmdi-hc-3x col-amber"></i></p>
-                        <span>Total Revenue</span>
-                        <h3 class="m-b-10">$<span class="number count-to" data-from="0" data-to="2078" data-speed="2000" data-fresh-interval="700">2078</span></h3>
-                        <small class="text-muted">27% lower growth</small>
+                        @php
+                        $questionCount = \App\Models\QuestionBank::count();
+                    @endphp
+                        <span>Total Questions</span>
+                        <h3 class="m-b-10"><span class="number count-to" data-from="0" data-to={{$questionCount}} data-speed="2000" data-fresh-interval="700"> {{$questionCount}} </span></h3>
+                        
                   </div>
                </div>
             </div>

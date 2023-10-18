@@ -66,7 +66,7 @@ class AnswerScriptController extends Controller
 
             $get_marks=$marks-$negative_marks;
 
-            if ($get_marks <3) {
+            if ($get_marks <($total_marks*0.33)) {
                 $status = 'failed';
             }else{
                 $status = 'passed';

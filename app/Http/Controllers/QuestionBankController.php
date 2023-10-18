@@ -19,11 +19,13 @@ class QuestionBankController extends Controller
     public function index()
     {
         // $questionbanks = QuestionBank::with('chapter.subject')->get();
+        
         $questionbanks = QuestionBank::with('chapter.subject')->get();
         $subjects=Subject::all();
         return view('questionbank.index',compact('questionbanks','subjects'));
     }
 
+    
     /**
      * Show the form for creating a new resource.
      */

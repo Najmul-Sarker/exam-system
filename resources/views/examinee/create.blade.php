@@ -1,8 +1,8 @@
 <x-backend.layouts.master>
   
     <div class="card">
-        <div class="card-header">
-            Create Examinee
+        <div class="card-header bg-teal">
+            <h6 class="text-white">Create Examinee</h6>
         </div>
         @if (session('success'))
             <div class="alert alert-success" role="alert">
@@ -57,7 +57,7 @@
             </div>
             </form>
         </div>
-        <div class="card-footer text-center">
+        <div class="card-footer text-center bg-teal">
             
         </div>
     </div>

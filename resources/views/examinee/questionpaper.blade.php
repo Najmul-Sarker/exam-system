@@ -74,14 +74,13 @@
             </a>
     </div>
     <script>
-        // Set the time limit in seconds (adjust this as needed)
-        const timeLimit = 30 * 60; // 1 minute
+        const timeLimit = {{$exam_duration}} * 60;
     
         function startTimer(duration, display) {
             let timer = duration;
             let hours, minutes, seconds;
     
-            const form = document.querySelector('#your-form-id'); // Replace 'your-form-id' with the actual ID of your form
+            const form = document.querySelector('#your-form-id');
     
             function submitFormOnTimeout() {
                 clearInterval(countdown);
@@ -99,14 +98,14 @@
     
                 display.textContent = hours + ":" + minutes + ":" + seconds;
     
-                if (timer <= 30) { // Change timer color to red when there are 30 seconds or less remaining
+                if (timer <= 30) { 
                     display.style.color = "red";
                 }
     
                 if (--timer < 0) {
                     submitFormOnTimeout();
                 }
-            }, 1000); // Update the timer every 1 second
+            }, 1000);
         }
     
         window.onload = function () {
