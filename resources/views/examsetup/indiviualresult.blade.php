@@ -1,5 +1,7 @@
 <x-backend.layouts.master>
-
+    <x-slot:title>
+                Exam Setup
+    </x-slot>
         <div class="card">
             <div class="header">
                 <h2>{{__("Examinee Result Details")}}</h2>

@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Exam Setup
+    </x-slot>
     @if (session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -16,7 +19,7 @@
 
         <div class="card">
             <div class="header">
-                <h2>{{__("ExamSetup List Page")}}</h2>
+                <h2>{{__("Exam List")}}</h2>
                 <ul class="header-dropdown">
                    
                     <li class="remove">

@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Chapter
+    </x-slot>
     <div class="card">
         <div class="card-header">Chapter Details</div>
            <div class="body">

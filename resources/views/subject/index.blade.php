@@ -1,7 +1,7 @@
 <x-backend.layouts.master>
 
     <x-slot:title>
-                Subject List
+                Subject
     </x-slot>
 
     @if (session('success'))
@@ -21,7 +21,7 @@
 
         <div class="card">
             <div class="header">
-                <h2>{{__("Subject List Page")}}</h2>
+                <h2>{{__("Subject List")}}</h2>
                 <ul class="header-dropdown">
                    
                     <li class="remove">

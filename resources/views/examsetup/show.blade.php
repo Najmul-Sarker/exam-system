@@ -1,6 +1,9 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Exam Setup
+    </x-slot>
     <div class="card">
-        <div class="card-header">ExamSetup Details</div>
+        <div class="card-header">Exam Details</div>
            <div class="card-body">
             
             

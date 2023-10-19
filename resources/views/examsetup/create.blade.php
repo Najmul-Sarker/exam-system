@@ -1,8 +1,10 @@
 <x-backend.layouts.master>
-  
+    <x-slot:title>
+        Exam Setup
+    </x-slot>
     <div class="card">
         <div class="card-header">
-            Create ExamSetup
+            Create Exam
         </div>
         {{-- @if($errors->any())
             <div class="alert alert-danger">

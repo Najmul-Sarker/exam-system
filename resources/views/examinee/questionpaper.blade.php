@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Question Paper
+    </x-slot>
     <div class="card ">
        
         <div class="card-header">

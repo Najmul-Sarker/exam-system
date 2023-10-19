@@ -1,5 +1,7 @@
 <x-backend.layouts.master>
-  
+    <x-slot:title>
+        Chapter
+    </x-slot>
     <div class="card">
         <div class="card-header">
             Create Chapter

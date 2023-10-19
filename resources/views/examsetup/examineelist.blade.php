@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Exam Setup
+    </x-slot>
     {{-- @if($errors->any())
         <div class="alert alert-danger">
             <ul>

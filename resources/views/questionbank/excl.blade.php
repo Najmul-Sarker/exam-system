@@ -1,5 +1,7 @@
 <x-backend.layouts.master>
-  
+    <x-slot:title>
+                Question Bank
+    </x-slot>
     <div class="card">
         <div class="card-header">
            Question Import

@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+        Subject
+    </x-slot>
     <div class="card">
         <div class="card-header">Subject Details</div>
            <div class="card-body">

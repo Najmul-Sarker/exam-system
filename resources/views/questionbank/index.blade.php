@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Question Bank
+    </x-slot>
     @if (session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -17,7 +20,7 @@
         <a href="{{route('questionbank.excel')}}" class="btn btn-success" title="Excel Import">Excel</a>
         <div class="card">
             <div class="header">
-                <h2>{{__("Question List Page")}}</h2>
+                <h2>{{__("Question List")}}</h2>
                 <ul class="header-dropdown">
                    
                     <li class="remove">

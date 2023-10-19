@@ -387,7 +387,7 @@
                     </div>
                 </li>
                 {{-- <li class="header">MAIN</li> --}}
-                <li class="active open"> <a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                <li class="active open"> <a href="/"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="material-icons">subject</i> <span class="icon-name">Subject</span> <span class="badge badge-success float-right">1</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('subjects.index')}}">List</a></li>

@@ -1,4 +1,7 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Chapter
+    </x-slot>
     @if (session('success'))
             <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -17,7 +20,7 @@
      
         <div class="card">
             <div class="header">
-                <h2>{{__("Chapter List Page")}}</h2>
+                <h2>{{__("Chapter List")}}</h2>
                 <ul class="header-dropdown">
                    
                     <li class="remove">

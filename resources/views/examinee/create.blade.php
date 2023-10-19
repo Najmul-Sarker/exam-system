@@ -1,8 +1,11 @@
 <x-backend.layouts.master>
+    <x-slot:title>
+                Examinee
+    </x-slot>
   
     <div class="card">
         <div class="card-header bg-teal">
-            <h6 class="text-white">Create Examinee</h6>
+            <h6 class="text-white">Examinee Info</h6>
         </div>
         @if (session('success'))
             <div class="alert alert-success" role="alert">
