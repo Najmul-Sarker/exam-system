@@ -2,7 +2,13 @@
     <ul class="menu_list">
         <li>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="{{asset('assets/najmul.jpg')}}" alt="Alpino"></a>
+            <a href="{{route('user.myprofile',Auth()->user()->id)}}">
+                @if(Auth()->user()->image)
+                    <img src="{{ asset('storage/users/' . Auth()->user()->image) }}" alt="User">
+                @else
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToK4qEfbnd-RN82wdL2awn_PMviy_pelocqQ&usqp=CAU" alt="Avatar">
+                @endif
+            </a>
         </li>
         <li><a href="javascript:void(0);" class="btn_overlay hidden-sm-down"><i class="zmdi zmdi-search"></i></a></li>        
         <li><a href="javascript:void(0);" class="menu-sm"><i class="zmdi zmdi-swap"></i></a></li>        
@@ -374,7 +380,13 @@
                 <li>
                     <div class="user-info m-b-20">
                         <div class="image">
-                            <a href="profile.html"><img src="{{asset('assets/najmul.jpg')}}" alt="User"></a>
+                            <a href="{{route('user.myprofile',Auth()->user()->id)}}">
+                                @if(Auth()->user()->image)
+                                    <img src="{{ asset('storage/users/' . Auth()->user()->image) }}" alt="User">
+                                @else
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToK4qEfbnd-RN82wdL2awn_PMviy_pelocqQ&usqp=CAU" alt="Avatar">
+                                @endif
+                            </a>
                         </div>
                         <div class="detail">
                             <h6>{{Auth()->user()->name}}</h6>

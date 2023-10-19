@@ -8,6 +8,7 @@ use App\Http\Controllers\ExamSetupController;
 use App\Http\Controllers\QuestionBankController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -71,6 +72,21 @@ Route::middleware('auth')->group(function(){
         
         Route::get('results/index',[ResultController::class,'index'])->name('index.show');
         Route::get('results/show',[ResultController::class,'show'])->name('result.show');
+
+         //routes for user
+        Route::prefix('users')->name('user.')->controller(UserController::class)->group(function(){
+    
+        Route::get('/user/view','user')->name('view');
+        Route:: get('/','index')->name('index');
+        Route:: get('/myprofile','myprofile')->name('myprofile');
+        Route:: get('/edit/{user}','edit')->name('edit');
+        Route:: post('/update/{user}','update')->name('update');
+        Route:: delete('/delete/{user}','delete')->name('delete');
+
+    
+
+    });
+
         
 
 });
