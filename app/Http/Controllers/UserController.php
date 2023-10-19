@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -31,18 +32,18 @@ class UserController extends Controller
         ]);
 
         if($image)
-        {
-            $path = public_path('storage/users/'.$user->image);
-            if(file_exists($path)){
-                unlink($path);
-            }
+        // {
+        //     $path = public_path('storage/users/'.$user->image);
+        //     if(file_exists($path)){
+        //         unlink($path);
+        //     }
 
             $image_name = uniqid().'.'.$image->getClientOriginalExtension();
 
             Image::make($image)->resize(200,250)->save(public_path('storage/users/'.$image_name));
-        }else{
-            $image_name = $user->image;
-        }
+        // }else{
+        //     $image_name = $user->image;
+        // }
 
         $user->update([
            

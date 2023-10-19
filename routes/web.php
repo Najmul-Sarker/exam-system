@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\AnswerScriptController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\ChapterController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ExamineeController;
 use App\Http\Controllers\ExamSetupController;
+use App\Http\Controllers\AnswerScriptController;
 use App\Http\Controllers\QuestionBankController;
-use App\Http\Controllers\ResultController;
-use App\Http\Controllers\SubjectController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
