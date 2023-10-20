@@ -22,7 +22,8 @@
                   <p class="text-muted mb-1">{{ auth()->user()->about }}</p>
                   {{-- <p class="text-muted mb-4">{{ auth()->user()->address }}</p> --}}
                   <div class="d-flex justify-content-center mb-2">
-                    <button type="button" class="btn btn-primary">Download CV</button>
+                    {{-- <button type="button" class="btn btn-primary">Download CV</button> --}}
+                    <a style="text-decoration: none" class="btn btn-primary" href="#" >Download CV</a>
                     <a style="text-decoration: none" class="btn btn-outline-primary ms-1" href="{{ route('user.edit',Auth::user()->id) }}">Update Info</a>
                     {{-- <button type="button" class="btn btn-outline-primary ms-1">Message</button> --}}
                   </div>
@@ -56,7 +57,7 @@
                       <p class="mb-0">Phone</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0">{{ auth()->user()->phone }}</p>
+                      <p class="text-muted mb-0">0{{ auth()->user()->phone }}</p>
                     </div>
                   </div>
                   <hr>
