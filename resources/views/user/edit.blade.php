@@ -6,10 +6,11 @@
             <div class="container mt-5">
                 <div class="row justifay-content-center">
                     <div class="col-lg-8">
+                        {{-- @dd($user) --}}
                         <div class="card">
                             <div class="card-header"><h3>Edit your info</h3></div>
                             <div class="card-body">
-                                <form  action="{{ route('user.update',Auth::user()->id) }}"  method="POST" enctype="multipart/form-data" >
+                                <form  action="{{ route('user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
 
                                     @csrf
                                     {{-- <div class="mb-3">
@@ -67,6 +68,7 @@
                                     <div class="mb-3">
                                         <label for="image">Image</label>
                                     <input type="file" class="form-control" name="image" id="image">
+                                    <p>jpeg,png,jpg,gif</p>
                                     <img src="{{asset('storage/users').'/'.$user->image}}" width="100" height="110" alt="user image">
                                     @error('image')
                                             <div class="alert alert-danger">{{ $message }}</div>

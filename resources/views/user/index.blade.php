@@ -64,14 +64,14 @@
                                     <a href="{{route('user.edit',$user->id)}}"class="btn btn-sm btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-edit mx-auto"></i>
                                     </a>
-                                    <form style="display:inline" action="" method="POST">
+                                    {{-- <form style="display:inline" action="" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }" class="btn btn-sm btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
                                             <i class="zmdi zmdi-delete mx-auto"></i>
                                         </button>
                                         
-                                    </form>
+                                    </form> --}}
                                     </div>
                                 </td>
                             </tr>
