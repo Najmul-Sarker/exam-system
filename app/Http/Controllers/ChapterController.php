@@ -14,6 +14,7 @@ class ChapterController extends Controller
      */
     public function index()
     {
+        $this->authorize('chapters');
         $chapters=Chapter::all();
         return view('chapter.index',compact('chapters'));
     }
@@ -23,6 +24,7 @@ class ChapterController extends Controller
      */
     public function create()
     {
+        $this->authorize('chapters');
         $subjects =Subject::all();
         return view('chapter.create',compact('subjects'));
     }
@@ -66,6 +68,7 @@ class ChapterController extends Controller
      */
     public function show(Chapter $chapter)
     {
+        $this->authorize('chapters');
         return view('chapter.show',compact('chapter'));
     }
 
@@ -74,6 +77,7 @@ class ChapterController extends Controller
      */
     public function edit(Chapter $chapter)
     {
+        $this->authorize('chapters');
         $subjects=Subject::all();
         return view('chapter.edit',compact('chapter','subjects'));
     }
@@ -116,6 +120,7 @@ class ChapterController extends Controller
      */
     public function destroy(Chapter $chapter)
     {
+        $this->authorize('chapters');
         $chapter->delete();
 
         return redirect(route("chapters.index"))->with('success', 'Chapter Deleted Successfully');

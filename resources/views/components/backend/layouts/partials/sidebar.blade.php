@@ -391,6 +391,7 @@
                         <div class="detail">
                             <h6>{{Auth()->user()->name}}</h6>
                             <p class="m-b-0"> {{Auth()->user()->email}} </p>
+                            <p class="m-b-0"> {{Auth()->user()->user_type}} </p>
                             <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-facebook-box"></i></a>
                             <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-linkedin-box"></i></a>
                             <a href="javascript:void(0);" title="" class=" waves-effect waves-block"><i class="zmdi zmdi-instagram"></i></a>
@@ -400,29 +401,41 @@
                 </li>
                 {{-- <li class="header">MAIN</li> --}}
                 <li class="active open"> <a href="/"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                @can('subjects')
+                    
+                
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="material-icons">subject</i> <span class="icon-name">Subject</span> <span class="badge badge-success float-right">1</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('subjects.index')}}">List</a></li>
                     </ul>
                 </li>
+                @endcan
+                @can('chapters')
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Chapter</span> <span class="badge badge-success float-right">1</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('chapters.index')}}">List</a></li>
                     </ul>
                 </li>
+                @endcan
+                @can('questionbanks')
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Question Bank</span> <span class="badge badge-success float-right">1</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('questionbanks.index')}}">List</a></li>
                     </ul>
                 </li>
+                @endcan
+                @can('examsetups')
                 <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Exam Setup</span> <span class="badge badge-success float-right">1</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('examsetups.index')}}">List</a></li>
                     </ul>
                 </li>
+                @endcan
+                @can('examinees')
                 <li><a href="{{route('examinees.create')}}" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Examinee</span> <span class="badge badge-success float-right">1</span></a>
                     
                 </li>
+                @endcan
                 
 
                                

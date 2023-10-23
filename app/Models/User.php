@@ -38,4 +38,27 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    const ADMIN = 'admin';
+    const EDITOR = 'editor';
+    const EXAMINEE = 'examinee';
+
+    public function isAdmin()
+    {
+        if(auth()->user()->user_type == self::ADMIN){
+            return true;
+        }
+    }
+    public function isEditor()
+    {
+        if(auth()->user()->user_type == self::EDITOR){
+            return true;
+        }
+    }
+    public function isExaminee()
+    {
+        if(auth()->user()->user_type == self::EXAMINEE){
+            return true;
+        }
+    }
 }

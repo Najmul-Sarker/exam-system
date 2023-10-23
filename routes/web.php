@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function(){
    
         
         Route::resource('subjects', SubjectController::class);
+
         Route::resource('chapters', ChapterController::class);
         Route::resource('questionbanks', QuestionBankController::class);
         

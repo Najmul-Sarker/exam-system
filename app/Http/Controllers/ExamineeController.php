@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 class ExamineeController extends Controller
 {
     public function create(){
+        $this->authorize('examinees');
         $examsetups = ExamSetup::all();
         return view('examinee.create',compact('examsetups'));
     }

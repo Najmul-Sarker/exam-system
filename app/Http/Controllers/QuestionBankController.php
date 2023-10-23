@@ -18,6 +18,7 @@ class QuestionBankController extends Controller
      */
     public function index()
     {
+        $this->authorize('questionbanks');
         // $questionbanks = QuestionBank::with('chapter.subject')->get();
         
         $questionbanks = QuestionBank::with('chapter.subject')->get();
@@ -31,6 +32,7 @@ class QuestionBankController extends Controller
      */
     public function create()
     {
+        $this->authorize('questionbanks');
         $subjects =Subject::all();
         $chapters =Chapter::all();
         return view('questionbank.create',compact('subjects','chapters'));
@@ -87,6 +89,7 @@ class QuestionBankController extends Controller
      */
     public function show(QuestionBank $questionbank)
     {
+        $this->authorize('questionbanks');
         $subjects =Subject::all();
         return view('questionbank.show',compact('questionbank','subjects'));
     }
@@ -96,6 +99,7 @@ class QuestionBankController extends Controller
      */
     public function edit(QuestionBank $questionbank)
     {
+        $this->authorize('questionbanks');
         $subjects=Subject::all();
         $chapters=Chapter::all();
         return view('questionbank.edit',compact('questionbank','subjects','chapters'));
@@ -153,6 +157,7 @@ class QuestionBankController extends Controller
      */
     public function destroy(QuestionBank $questionbank)
     {
+        $this->authorize('questionbanks');
         $questionbank->delete();
 
        

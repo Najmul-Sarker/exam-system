@@ -51,9 +51,12 @@
                                     <a href="{{route('subjects.show',$subject->id)}}"class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-eye mx-auto"></i>
                                     </a>
+                                    
                                     <a href="{{route('subjects.edit',$subject->id)}}"class="btn btn-sm btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-edit mx-auto"></i>
                                     </a>
+                                    
+                                    
                                     <form style="display:inline" action="{{route('subjects.destroy',$subject->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
@@ -62,6 +65,7 @@
                                         </button>
                                         
                                     </form>
+                                    
                                     </div>
                                 </td>
                             </tr>

@@ -17,6 +17,7 @@ class ExamSetupController extends Controller
 {
     public function index()
     {
+        $this->authorize('examsetups');
         $examsetups=ExamSetup::all();
         $subjects=Subject::all();
         $chapters=Chapter::all();
@@ -25,6 +26,7 @@ class ExamSetupController extends Controller
 
     public function create()
     {
+        $this->authorize('examsetups');
         $subjects=Subject::all();
         $chapters=Chapter::all();
         return view('examsetup.create',compact('subjects','chapters'));
@@ -73,11 +75,13 @@ class ExamSetupController extends Controller
 
     public function show(ExamSetup $examsetup)
     {
+        $this->authorize('examsetups');
         return view('examsetup.show',compact('examsetup'));
     }
 
     public function edit(ExamSetup $examsetup)
     {
+        $this->authorize('examsetups');
         $subjects=Subject::all();
         // dd($subjects);
         $chapters=Chapter::all();
@@ -127,6 +131,7 @@ class ExamSetupController extends Controller
 
     public function destroy(ExamSetup $examsetup)
     {
+        $this->authorize('examsetups');
         $examsetup->delete();
 
         return redirect(route("examsetups.index"))->with('success', 'Examsetup Deleted Successfully');

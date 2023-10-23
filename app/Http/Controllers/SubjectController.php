@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
@@ -14,6 +15,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
+        $this->authorize('subjects');
         $subjects = Subject::all();
         return view('subject.index',compact('subjects'));
     }
@@ -23,6 +25,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
+        $this->authorize('subjects');
         return view('subject.create');
     }
 
@@ -68,6 +71,8 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
+        $this->authorize('subjects');
+
         return view('subject.show',compact('subject'));
     }
 
@@ -76,6 +81,11 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
+        $this->authorize('subjects');
+
+        // if (! Gate::allows('edit-subject', $subject)) {
+        //     abort(403);
+        // }
         return view('subject.edit',compact('subject'));
     }
 
@@ -84,6 +94,7 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
+        
         try {
             $request->validate([
                 'title' => 'required',
@@ -114,6 +125,11 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
+        $this->authorize('subjects');
+
+        // if (! Gate::allows('delete-subject', $subject)) {
+        //     abort(403);
+        // }
         $subject->delete();
 
         return redirect(route("subjects.index"))->with('success', 'Subject Deleted Successfully');
