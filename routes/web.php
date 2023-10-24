@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function(){
         
         Route::resource('examsetups', ExamSetupController::class);
         Route::get('examsetups/examineelist/{id}',[ExamSetupController::class,'examineelist'])->name('examsetup.examineelist');
-        Route::get('examsetups/individualresult/{roll_no}',[ExamSetupController::class,'individualresult'])->name('examsetup.individualresult');
+        Route::get('examsetups/individualresult/{roll_no}/{exam_setup_id}',[ExamSetupController::class,'individualresult'])->name('examsetup.individualresult');
         Route::put('examsetups/status/update/{examsetup}', [ExamSetupController::class,'updatestatus'])->name('examsetup.update.status');
         
         

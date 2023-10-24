@@ -14,7 +14,14 @@
 
     <div class="card">
         <div class="header">
-            <h2>{{__("Exam attender List Page")}}</h2>
+            {{-- if ($examsetups) {
+                $title = $examsetups->title;
+                dd($title);
+                // Now you have the title of the ExamSetup with the given ID.
+            } else {
+                // Handle the case where the ExamSetup with the given ID was not found.
+            } --}}
+            <h2>{{$examsetups->title}}{{__(" attender List Page")}}</h2>
             <ul class="header-dropdown">
                
                 <li class="remove">
@@ -63,7 +70,7 @@
                                 
                                 <td>
                                     <div style="display: flex; flex-direction: row;">
-                                    <a href="{{ route('examsetup.individualresult', $examineelist->roll_no) }}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Individual Result Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
+                                    <a href="{{ route('examsetup.individualresult', ['exam_setup_id' => $examineelist->exam_setup_id, 'roll_no' => $examineelist->roll_no]) }}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Individual Result Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
                                     </div>
                                 </td>
                             </tr>

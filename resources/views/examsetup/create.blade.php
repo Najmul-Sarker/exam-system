@@ -24,7 +24,7 @@
                     <div class="row"></div>
                     <div class="form-group clearfix">  
                         <label  for="">{{__("Select Subject Name")}}</label> 
-                        <select name="subject_id" id="subject_id" class="form-control show-tick">
+                        <select required name="subject_id" id="subject_id" class="form-control show-tick">
                             <option value="">-- Please select --</option>
                         @foreach ($subjects as $subject)
                         <option value="{{$subject->id}}">{{$subject->title}}</option>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group clearfix">  
                         <label  for="">{{__("Select Chapter Name")}}</label> 
-                        <select name="chapter_id" id="chapter_id" class="form-control show-tick">
+                        <select required name="chapter_id" id="chapter_id" class="form-control show-tick">
                             <option value="">-- Please select --</option>
                         @foreach ($chapters as $chapter)
                         <option value="{{$chapter->id}}">{{$chapter->title}}</option>
@@ -44,35 +44,35 @@
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Exam Name")}}</label>                                 
-                        <input type="text" name="title" class="form-control" placeholder="Exam Name" />
+                        <input required type="text" name="title" class="form-control" placeholder="Exam Name" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Duration")}}</label>                                 
-                        <input type="number" name="duration" class="form-control" placeholder="Duration" />
+                        <input required type="number" name="duration" class="form-control" placeholder="Duration" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Total Question")}}</label>                                 
-                        <input type="number" name="total_question" class="form-control" placeholder="Total Question" />
+                        <input required type="number" name="total_question" class="form-control" placeholder="Total Question" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Easy Question")}}</label>                                 
-                        <input type="number" name="easy_question" class="form-control" placeholder="Easy Question" />
+                        <input required type="number" name="easy_question" class="form-control" placeholder="Easy Question" />
                     </div>
                     <div class="form-group">  
                         <label  for="">{{__("Hard Question")}}</label>                                 
-                        <input type="number" name="hard_question" class="form-control" placeholder="Hard Question" />
+                        <input required type="number" name="hard_question" class="form-control" placeholder="Hard Question" />
                     </div>
                     <div class="form-group"> 
                         <label  for="">{{__("Description Question")}}</label>                                   
-                        <input type="text" name="question_description" class="form-control" placeholder="Question Description" />
+                        <input required type="text" name="question_description" class="form-control" placeholder="Question Description" />
                     </div>
                     <div class="form-group"> 
                         <label  for="">{{__("Start Time")}}</label>                                   
-                        <input type="datetime-local" name="start_at" class="form-control"/>
+                        <input required type="datetime-local" name="start_at" class="form-control"/>
                     </div>
                     <div class="form-group"> 
                         <label  for="">{{__("End Time")}}</label>                                   
-                        <input type="datetime-local" name="end_at" class="form-control"/>
+                        <input required type="datetime-local" name="end_at" class="form-control"/>
                     </div>
                 </div>
             </div>

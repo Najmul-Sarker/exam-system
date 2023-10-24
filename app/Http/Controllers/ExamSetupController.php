@@ -137,16 +137,28 @@ class ExamSetupController extends Controller
         return redirect(route("examsetups.index"))->with('success', 'Examsetup Deleted Successfully');
     }
 
+    // public function examineelist($id){
+    //     $examineelists = Examinee::find($id,'exam_setup_id')->get();
+    //     $results=Result::all();
+    //     return view('examsetup.examineelist',compact('results','examineelists'));
+    // }
     public function examineelist($id){
-        $examineelists = Examinee::find($id,'exam_setup_id')->get();
-        $results=Result::all();
-        return view('examsetup.examineelist',compact('results','examineelists'));
+        // dd($id);
+        $examineelists = Examinee::where('exam_setup_id', $id)->get();
+        $examsetups = ExamSetup::find($id);
+        $results = Result::where('exam_id', $id)->get();
+        // dd($results);
+        return view('examsetup.examineelist', compact('results', 'examineelists','examsetups'));
     }
 
 
-    public function individualresult($roll_no){
+    public function individualresult($roll_no, $exam_setup_id){
 
-        $answers = AnswerScript::where('roll_no',$roll_no)->get();
+        // dd($roll_no);
+        // dd($exam_setup_id);
+
+        $answers = AnswerScript::where('roll_no',$roll_no)->where('exam_id',$exam_setup_id)->get();
+        // dd($answers);
         $answerscripts=[];
         foreach ($answers as $value) {
             $answerscripts[] = $value;

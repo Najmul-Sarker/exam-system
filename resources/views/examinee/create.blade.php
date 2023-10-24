@@ -30,7 +30,7 @@
 
                     <div class="form-group clearfix">  
                         <label  for="">{{__("Select Exam Name")}}</label> 
-                        <select name="exam_setup_id" id="exam_setup_id" class="form-control show-tick">
+                        <select required name="exam_setup_id" id="exam_setup_id" class="form-control show-tick">
                             <option value="" disabled>-- Please select --</option>
                             @foreach ($examsetups as $examsetup)
                                 @if ($examsetup->status == '1')
