@@ -3,7 +3,7 @@
                 Chapter
     </x-slot>
     <div class="card">
-        <div class="card-header">Chapter Details</div>
+        <div class="card-header bg-teal">Chapter Details</div>
            <div class="body">
             
             
@@ -14,7 +14,7 @@
                
            </div>
            <div class="card-footer text-center d-flex justify-content-center">
-            <a href="{{ route('chapters.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+            <a href="{{ route('chapters.index') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
                 <i class="material-icons">list</i>
             </a>
             

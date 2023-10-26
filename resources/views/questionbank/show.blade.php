@@ -3,7 +3,7 @@
                 Question Bank
     </x-slot>
     <div class="card">
-        <div class="card-header">Question Details</div>
+        <div class="card-header bg-teal">Question Details</div>
            <div class="card-body">
             
             <p><b>{{ __('Subject Name') }} : </b>
@@ -27,7 +27,7 @@
                
            </div>
            <div class="card-footer text-center d-flex justify-content-center">
-            <a href="{{ route('questionbanks.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+            <a href="{{ route('questionbanks.index') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
                 <i class="material-icons">list</i>
             </a>
             

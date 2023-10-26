@@ -32,7 +32,7 @@
             <div class="body">
                 <div class="table">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                        <thead class="bg-grey">
+                        <thead class="bg-teal">
                             <tr>
                                 <th class="text-center">Sl</th>
                                 <th class="text-center">Title</th>

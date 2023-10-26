@@ -7,7 +7,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="company_detail">
                         <h4 class="logo"><img src="{{asset('ui/main/assets/images/logo.svg')}}" alt=""> EMS</h4>
-                        <h3>EXAM <strong>MANAGEMENT </strong>SYSTEM</h3>
+                        <h3 class="text-primary">EXAM <strong>MANAGEMENT </strong>SYSTEM</h3>
                         <p>Try that again, and if it still doesn't work, let us know.</p>
                         <div class="footer">
                             <ul  class="social_link list-unstyled">

@@ -31,7 +31,7 @@
             <div class="body">
                 <div class="table">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                        <thead class="bg-grey">
+                        <thead class="bg-teal">
                             <tr>
                                 <th>Sl</th>
                                 <th>Subject Name</th>
@@ -49,16 +49,16 @@
                                 <td> {{$chapter->description}} </td>
                                 <td>
                                     <div style="display:flex ; flex-derection: row;">
-                                    <a href="{{route('chapters.show',$chapter->id)}}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;">
+                                    <a href="{{route('chapters.show',$chapter->id)}}"class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-eye mx-auto"></i>
                                     </a>
-                                    <a href="{{route('chapters.edit',$chapter->id)}}"class="btn btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
+                                    <a href="{{route('chapters.edit',$chapter->id)}}"class="btn btn-sm btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-edit mx-auto"></i>
                                     </a>
                                     <form style="display:inline" action="{{route('chapters.destroy',$chapter->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }"class="btn btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
+                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }"class="btn btn-sm btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
                                             <i class="zmdi zmdi-delete mx-auto"></i></button>
                                         
                                     </form>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="card-footer text-center d-flex justify-content-center">
-                <a href="{{ route('chapters.create') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
+                <a href="{{ route('chapters.create') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
                     <i class="material-icons">add</i>
                 </a>
                 

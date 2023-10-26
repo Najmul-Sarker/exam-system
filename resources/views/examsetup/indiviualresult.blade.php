@@ -4,7 +4,13 @@
     </x-slot>
         <div class="card">
             <div class="header">
-                <h2>{{__("Examinee Result Details")}}</h2>
+                @foreach ($answerscripts as $answer)
+                    
+                @endforeach
+                
+                <h2 class="text-orange">{{__("Examinee Result Details")}}</h2>
+                    <p class="text-success"><b>{{ __('Examinee Name') }} : {{$answer->examinee_name}} </b></p>   
+                    <p class="text-success"><b>{{ __('Roll No') }} :{{$answer->roll_no}} </b></p>
                 <ul class="header-dropdown">
                    
                     <li class="remove">
@@ -16,11 +22,9 @@
                 
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                        <thead class="bg-grey">
+                        <thead class="bg-teal">
                             <tr>
                                 <th>Sl</th>
-                                <th>Examinee Name</th>
-                                <th>Roll No</th>
                                 <th>Question Text</th>
                                 <th>Option 1</th>
                                 <th>Option 2</th>
@@ -35,8 +39,6 @@
                             @forelse ($answerscripts as $answerscript)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td>{{$answerscript->examinee_name}}</td>
-                                <td>{{$answerscript->roll_no}}</td>
                                 <td>{{$answerscript->question_text}}</td>
                                 <td>{{$answerscript->option1}}</td>
                                 <td>{{$answerscript->option2}}</td>
@@ -61,7 +63,7 @@
                 </div>
             </div>
             <div class="card-footer text-center d-flex justify-content-center">
-                <a href="{{ route('examsetups.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+                <a href="{{ route('examsetups.index') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
                     <i class="material-icons">list</i>
                 </a>
                 

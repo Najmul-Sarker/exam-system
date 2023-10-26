@@ -17,7 +17,7 @@
             </div>
         @endif --}}
 
-        <a href="{{route('questionbank.excel')}}" class="btn btn-success" title="Excel Import">Excel</a>
+        <a href="{{route('questionbank.excel')}}" class="btn btn-sm btn-success" title="Excel Import">Excel Upload</a>
         <div class="card">
             <div class="header">
                 <h2>{{__("Question List")}}</h2>
@@ -32,7 +32,7 @@
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                        <thead class="bg-grey">
+                        <thead class="bg-teal">
                             <tr>
                                 <th>Sl</th>
                                 <th>Subject Name</th>
@@ -73,16 +73,16 @@
                                 <td> {{$questionbank->type}} </td>
                                 <td>
                                     <div style="display: flex; flex-direction: row;">
-                                    <a href="{{route('questionbanks.show',$questionbank->id)}}" class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
+                                    <a href="{{route('questionbanks.show',$questionbank->id)}}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
 
-                                    <a href="{{route('questionbanks.edit',$questionbank->id)}}"class="btn btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
+                                    <a href="{{route('questionbanks.edit',$questionbank->id)}}"class="btn btn-sm btn-icon btn-info btn-icon-mini d-flex align-items-center" title="Edit" style="margin-right: 10px;">
                                         <i class="zmdi zmdi-edit mx-auto"></i>
                                     </a>
 
                                     <form style="display:inline" action="{{route('questionbanks.destroy',$questionbank->id)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }"class="btn btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
+                                        <button onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this post?')){ this.closest('form').submit(); }"class="btn btn-sm btn-icon btn-danger btn-icon-mini d-flex align-items-center" title="Delete">
                                             <i class="zmdi zmdi-delete mx-auto"></i>
                                         </button>
                                         
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="card-footer text-center d-flex justify-content-center">
-                <a href="{{ route('questionbanks.create') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
+                <a href="{{ route('questionbanks.create') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
                     <i class="material-icons">add</i>
                 </a>
                 

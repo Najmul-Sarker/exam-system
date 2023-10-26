@@ -30,7 +30,7 @@
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                        <thead class="bg-grey">
+                        <thead class="bg-teal">
                             <tr>
                                 <th>Sl</th>
                                 <th>Subject</th>
@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="card-footer text-center d-flex justify-content-center">
-                <a href="{{ route('examsetups.create') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
+                <a href="{{ route('examsetups.create') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="Add">
                     <i class="material-icons">add</i>
                 </a>
                 

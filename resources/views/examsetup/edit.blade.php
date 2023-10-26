@@ -3,7 +3,7 @@
                 Exam Setup
     </x-slot>
     <div class="card">
-        <div class="card-header">
+        <div class="card-header bg-teal">
             Edit Exam
         </div>
         {{-- @if($errors->any())
@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="row justify-content-end">
-                <button type="submit" class="btn btn-md btn-info d-flex align-items-center">
+                <button type="submit" class="btn btn-sm btn-md btn-info d-flex align-items-center">
                     <i class="material-icons">check</i>
                     <b>Submit</b>
                 </button>
@@ -89,7 +89,7 @@
             </form>
         </div>
         <div class="card-footer text-center d-flex justify-content-center">
-            <a href="{{ route('examsetups.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+            <a href="{{ route('examsetups.index') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
                 <i class="material-icons">list</i>
             </a>
             

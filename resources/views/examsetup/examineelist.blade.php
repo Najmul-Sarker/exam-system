@@ -33,7 +33,7 @@
         <div class="body">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                    <thead class="bg-grey">
+                    <thead class="bg-teal">
                         <tr>
                             <th>Sl</th>
                             <th>Examinee Name</th>
@@ -70,7 +70,7 @@
                                 
                                 <td>
                                     <div style="display: flex; flex-direction: row;">
-                                    <a href="{{ route('examsetup.individualresult', ['exam_setup_id' => $examineelist->exam_setup_id, 'roll_no' => $examineelist->roll_no]) }}"class="btn btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Individual Result Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
+                                    <a href="{{ route('examsetup.individualresult', ['exam_setup_id' => $examineelist->exam_setup_id, 'roll_no' => $examineelist->roll_no]) }}"class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex align-items-center" title="Individual Result Show" style="margin-right: 10px;"><i class="zmdi zmdi-eye mx-auto"></i></a>
                                     </div>
                                 </td>
                             </tr>
@@ -85,7 +85,7 @@
             </div>
         </div>
         <div class="card-footer text-center d-flex justify-content-center">
-            <a href="{{ route('examsetups.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+            <a href="{{ route('examsetups.index') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
                 <i class="material-icons">list</i>
             </a>
             

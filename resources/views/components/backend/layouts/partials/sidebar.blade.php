@@ -401,38 +401,53 @@
                 </li>
                 {{-- <li class="header">MAIN</li> --}}
                 <li class="active open"> <a href="/"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
+                @php
+                        $totalSubject = \App\Models\Subject::count();
+                @endphp
                 @can('subjects')
                     
                 
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="material-icons">subject</i> <span class="icon-name">Subject</span> <span class="badge badge-success float-right">1</span></a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-book"></i> <span class="icon-name">Subject</span> <span class="badge badge-success float-right"> {{$totalSubject}} </span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('subjects.index')}}">List</a></li>
                     </ul>
                 </li>
                 @endcan
+                @php
+                        $totalChapter = \App\Models\Chapter::count();
+                @endphp
                 @can('chapters')
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Chapter</span> <span class="badge badge-success float-right">1</span></a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-book-open"></i><span>Chapter</span> <span class="badge badge-success float-right"> {{$totalChapter}} </span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('chapters.index')}}">List</a></li>
                     </ul>
                 </li>
                 @endcan
+                @php
+                        $questionCount = \App\Models\QuestionBank::count();
+                    @endphp
                 @can('questionbanks')
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Question Bank</span> <span class="badge badge-success float-right">1</span></a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-clipboard-question"></i><span>Question Bank</span> <span class="badge badge-success float-right">{{$questionCount}}</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('questionbanks.index')}}">List</a></li>
                     </ul>
                 </li>
                 @endcan
+                @php
+                        $totalExam = \App\Models\ExamSetup::count();
+                @endphp
                 @can('examsetups')
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Exam Setup</span> <span class="badge badge-success float-right">1</span></a>
+                <li><a href="javascript:void(0);" class="menu-toggle"><i class="fa-solid fa-book-atlas"></i><span>Exam Setup</span> <span class="badge badge-success float-right">{{$totalExam}}</span></a>
                     <ul class="ml-menu">
                         <li><a href="{{route('examsetups.index')}}">List</a></li>
                     </ul>
                 </li>
                 @endcan
+                @php
+                        $totalExaminee = \App\Models\Examinee::count();
+                        @endphp
                 @can('examinees')
-                <li><a href="{{route('examinees.create')}}" class="menu-toggle"><i class="zmdi zmdi-apps"></i><span>Examinee</span> <span class="badge badge-success float-right">1</span></a>
+                <li><a href="{{route('examinees.create')}}" class="menu-toggle"><i class="fa-solid fa-users"></i><span>Examinee</span> <span class="badge badge-success float-right"> {{$totalExaminee}} </span></a>
                     
                 </li>
                 @endcan

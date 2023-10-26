@@ -10,7 +10,7 @@
                         @php
                         $questionCount = \App\Models\QuestionBank::count();
                     @endphp
-                        <span>Question Bank Total Questions</span>
+                        <span>Total Questions</span>
                         <h3 class="m-b-10"><span class="number count-to" data-from="0" data-to={{$questionCount}} data-speed="2000" data-fresh-interval="700"> {{$questionCount}} </span></h3>
                         
                   </div>
@@ -23,7 +23,7 @@
                         @php
                         $totalExam = \App\Models\ExamSetup::count();
                         @endphp
-                        <span>Total Exam Set</span>
+                        <span>Number of Exam</span>
                         <h3 class="m-b-10 number count-to" data-from="0" data-to= {{$totalExam}} data-speed="2000" data-fresh-interval="700"> {{$totalExam}} </h3>
                         
                   </div>
@@ -34,10 +34,10 @@
                   <div class="body">
                         <p class="m-b-20"><i class="zmdi zmdi-shopping-basket zmdi-hc-3x"></i></p>
                         @php
-                        $totalAttender = \App\Models\Examinee::where('exam_setup_id', 1)->count();
+                        $totalExaminee = \App\Models\Examinee::count();
                         @endphp
-                        <span>Total Attender</span>
-                        <h3 class="m-b-10 number count-to" data-from="0" data-to={{$totalAttender}} data-speed="2000" data-fresh-interval="700">{{$totalAttender}}</h3>
+                        <span>Total Examinee</span>
+                        <h3 class="m-b-10 number count-to" data-from="0" data-to={{$totalExaminee}} data-speed="2000" data-fresh-interval="700">{{$totalExaminee}}</h3>
                         
                   </div>
                </div>

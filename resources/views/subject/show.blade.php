@@ -3,7 +3,7 @@
         Subject
     </x-slot>
     <div class="card">
-        <div class="card-header">Subject Details</div>
+        <div class="card-header bg-teal">Subject Details</div>
            <div class="card-body">
             
             
@@ -13,11 +13,11 @@
                
            </div>
            <div class="card-footer text-center d-flex justify-content-center">
-            <a href="{{ route('subjects.index') }}" class="btn btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
+            <a href="{{ route('subjects.index') }}" class="btn btn-sm btn-icon btn-success btn-icon-mini d-flex justify-content-center align-items-center" title="List">
                 <i class="material-icons">list</i>
             </a>
             
         </div>
-       </div>
+    </div>
 
 </x-backend.layouts.master>

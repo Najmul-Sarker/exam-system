@@ -53,7 +53,7 @@ class ChapterController extends Controller
                         'description' => $request->description,
                     ]);
                 
-                    return redirect(route("chapters.index"))->with('success', 'Subject Create Successfully');
+                    return redirect(route("chapters.index"))->with('success', 'Chapter Create Successfully');
                 } catch (\Illuminate\Database\QueryException $e) {
                     Log::error("Database Error: " . $e->getMessage());
                     return redirect()->back()->with('error', 'An error occurred while saving the data. Please try again later.');
